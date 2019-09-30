@@ -19,7 +19,7 @@ const users = [
     }
 ];
 
-const item = [
+const devAsignation = [
     {
         developer: 'Juana Domínguez',
         rate: 1000,
@@ -91,3 +91,5 @@ const item = [
         status:5
     },
 ]
+
+export {users,devAsignation};
