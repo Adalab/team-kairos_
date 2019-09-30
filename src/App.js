@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
+import Login from './components/Login';
 import './App.css';
 
 class App extends React.Component {
@@ -11,6 +12,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <Header />
+        <Login />
       </div>
     );
   }
