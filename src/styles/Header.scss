@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 20px;
+    background-color: $brand-03;
+}
+
+.header__logo-user {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user {
+    margin: 0;
+    padding-right: 5px;
+}
