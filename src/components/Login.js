@@ -5,12 +5,13 @@ import '../styles/Login.scss';
 
 const Login = props => {
 
-  const { user,getUserData} = props;
+  const { email, getUserData} = props;
+
   return (
     <main className="main__login">
       <div className="login__email-container">
         <label htmlFor="email">Introduce tu email</label>
-        <input className="email" type="text" id="email" name="email" onChange={getUserData} value={user.email}/>
+        <input className="email" type="text" id="email" name="email" onChange={getUserData} value={email}/>
       </div>
       <div className="login__rol-container">
         <label htmlFor="rol">Rol</label>
@@ -27,7 +28,7 @@ const Login = props => {
 };
 
 Login.propTypes = {
-  user: PropTypes.object.isRequired,
+  email: PropTypes.string.isRequired,
   getUserData: PropTypes.func.isRequired
 }
 

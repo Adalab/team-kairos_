@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: { email: '', rol: '' },
+      email: '', 
+      rol: '' ,
       devAsignation: devAsignation,
     };
     this.getUserData = this.getUserData.bind(this);
@@ -19,16 +20,16 @@ class App extends React.Component {
   getUserData(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
-    this.setState({user:{[id]: value }});
+    this.setState({[id]: value });
   }
 
   render() {
-    const { user, devAsignation } = this.state;
+    const { email, devAsignation } = this.state;
     return (
       <div className="app">
-        <Header user={user}/>
+        <Header email={email}/>
         <Login
-          user={user}
+          email={email}
           getUserData={this.getUserData} />
         <DevelopersList devAsignation={devAsignation} />
 
