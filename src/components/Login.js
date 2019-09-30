@@ -5,12 +5,12 @@ import '../styles/Login.scss';
 
 const Login = props => {
 
-  const { getUserData } = props;
+  const { user,getUserData} = props;
   return (
     <main className="main__login">
       <div className="login__email-container">
         <label htmlFor="email">Introduce tu email</label>
-        <input className="email" type="text" id="email" name="email" onChange={getUserData} />
+        <input className="email" type="text" id="email" name="email" onChange={getUserData} value={user.email}/>
       </div>
       <div className="login__rol-container">
         <label htmlFor="rol">Rol</label>
