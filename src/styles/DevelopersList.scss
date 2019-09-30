@@ -1,0 +1,16 @@
+.main__developers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.developers__list {
+  list-style: none;
+}
+.developers__item {
+  margin: 5px;
+}
+.developer__card-container {
+  border: solid 1px black;
+  padding: 15px;
+}
+

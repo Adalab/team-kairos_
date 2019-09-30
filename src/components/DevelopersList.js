@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/DevelopersList.scss';
 
 const DevelopersList = (props) => {
     const {devAsignation}=props;
@@ -7,7 +8,7 @@ const DevelopersList = (props) => {
         <main className="main__developers">
             <ul className="developers__list">
                 {devAsignation.map(dev => 
-                        <li>
+                        <li className="developers__item">
                             <div className="developer__card-container">
                                 <h3 className="developer__name">{dev.developer}</h3>
                                 <p className="developer__code">{dev.code}</p>
