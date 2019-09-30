@@ -12,7 +12,7 @@ const Login = props => {
             <input className="email" type="text" id="email" name="email"/>
             </div>
             <div className="login__rol-container">
-                <label for="rol">Rol</label>
+                <label htmlFor="rol">Rol</label>
                 <select id="rol" name="rol">
                     <option value="head">head</option>
                     <option value="operaciones">operaciones</option>
