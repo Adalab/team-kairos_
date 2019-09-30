@@ -19,8 +19,7 @@ class App extends React.Component {
   getUserData(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
-    this.setState({ [id]: value });
-    
+    this.setState({user:{[id]: value }});
   }
 
   render() {
