@@ -20,16 +20,16 @@ class App extends React.Component {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
     this.setState({ [id]: value });
-    console.log(value);
+    
   }
 
   render() {
-    const { users, devAsignation } = this.state;
+    const { user, devAsignation } = this.state;
     return (
       <div className="app">
-        <Header />
+        <Header user={user}/>
         <Login
-          users={users}
+          user={user}
           getUserData={this.getUserData} />
         <DevelopersList devAsignation={devAsignation} />
 

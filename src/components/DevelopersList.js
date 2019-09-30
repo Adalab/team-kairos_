@@ -6,9 +6,10 @@ const DevelopersList = (props) => {
   const { devAsignation } = props;
   return (
     <main className="main__developers">
+      <button className="create__developer-button">Iniciar proceso</button>
       <ul className="developers__list">
-        {devAsignation.map(dev =>
-          <li className="developers__item">
+        {devAsignation.map((dev,index) =>
+          <li className="developers__item" key={index}>
             <div className="developer__card-container">
               <h3 className="developer__name">{dev.developer}</h3>
               <p className="developer__code">{dev.code}</p>
