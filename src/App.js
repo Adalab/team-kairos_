@@ -4,6 +4,8 @@ import Form from './components/Form';
 import './App.scss';
 import Login from './components/Login';
 import DevelopersList from './components/DevelopersList';
+import NewProcess from './components/NewProcess';
+//import Form from './components/Form';
 import { devAsignation } from './components/Data';
 
 
@@ -32,6 +34,7 @@ class App extends React.Component {
           email={email}
           getUserData={this.getUserData} />
         <DevelopersList devAsignation={devAsignation} />
+        <NewProcess />
 
          <Form /> 
       </div>
