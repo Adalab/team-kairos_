@@ -1,0 +1,29 @@
+@import 'variables';
+
+.main__login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.login__email-container{
+
+}
+
+.login__rol-container{
+    margin-top: 30px;
+}
+
+.login__button-container {
+    margin-top: 30px;
+   
+}
+.login__button {
+    height: 20px;
+    width: 110px;
+    background-color: $brand-01;
+    color:$text-04;
+}
