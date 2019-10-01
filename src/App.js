@@ -17,15 +17,31 @@ class App extends React.Component {
       email: '', 
       rol: '' ,
       devAsignation: devAsignation,
+      steps : {
+        headfirst: false,
+        operations: false,
+        talent: false,
+        ambassador: false,
+        headend: false,
+      }
     };
     this.getUserData = this.getUserData.bind(this);
+    this.changeSteps = this.changeSteps.bind(this);
   }
   getUserData(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
     this.setState({[id]: value });
   }
-
+  changeSteps (event) {
+    this.setState (prevState => {
+      const newSteps = {...prevState.steps};
+      newSteps.headfirst = true;  
+      return {
+        steps: newSteps
+      }
+    }) 
+  }
   render() {
     const { email, devAsignation } = this.state;
     return (
@@ -48,21 +64,20 @@ class App extends React.Component {
             render={() => {
               return (
                 <DevelopersList 
-                  devAsignation={devAsignation} 
+                  devAsignation = {devAsignation} 
+                 
                 />
               );
             }} />
-          <Route path="/newprocess" component={NewProcess} />
+          <Route path="/newprocess" render={() => {
+            return (
+              <NewProcess 
+              changeSteps = {this.changeSteps}/>
+            );
+          }} />         
           <Route path="/form/:id" component={Form} />
 
         </Switch>
-
-        {/* <Login
-          email={email}
-          getUserData={this.getUserData} />
-        <DevelopersList devAsignation={devAsignation} />
-        <NewProcess />
-        <Form />  */}
       </div>
     );
   }
