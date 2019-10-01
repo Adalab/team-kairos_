@@ -97,6 +97,7 @@ class App extends React.Component {
           <Route path="/newprocess" render={() => {
             return (
               <NewProcess
+              rol={rol}
                 changeSteps={this.changeSteps} />
             );
           }} />

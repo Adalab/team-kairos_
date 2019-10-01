@@ -5,11 +5,11 @@ import Form1NewProject from './Form1NewProject';
 import '../styles/NewProcess.scss';
 
 const NewProcess = props => {
-  const {changeSteps} = props;
+  const {changeSteps,rol} = props;
   return (
     <main className="main__new-process">
       <form action="">
-        <Form1NewProject />
+        <Form1NewProject rol={rol} />
         <div className="new-process__button-container">
           <Link to="/developerlist"><button className="create__button" type="submit" id="headfirst" onClick={changeSteps}>Confirmar</button></Link>
         </div>
