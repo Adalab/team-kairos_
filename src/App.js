@@ -35,8 +35,7 @@ class App extends React.Component {
           getUserData={this.getUserData} />
         <DevelopersList devAsignation={devAsignation} />
         <NewProcess />
-
-         <Form /> 
+        <Form /> 
       </div>
     );
   }
