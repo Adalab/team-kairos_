@@ -106,7 +106,8 @@ class App extends React.Component {
               return (
                 <Form
                   rol={rol}
-                  getUserData={this.getUserData} />
+                  getUserData={this.getUserData}
+                  changeSteps={this.changeSteps} />
               );
             }} />
         </Switch>
