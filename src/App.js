@@ -89,6 +89,7 @@ class App extends React.Component {
             render={() => {
               return (
                 <DevelopersList
+                  rol={rol}
                   devAsignation={devAsignation}
 
                 />
