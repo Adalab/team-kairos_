@@ -24,6 +24,7 @@ const Form = props => {
       <Form3Talent 
         rol={rol}
         getUserData={getUserData}
+        changeSteps={changeSteps} 
         />
       <Form4Ambassador 
         rol={rol}
