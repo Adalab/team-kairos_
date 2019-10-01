@@ -6,15 +6,30 @@ import Form3Talent from './Form3Talent';
 import Form5LastCheck from './Form5LastCheck';
 
 const Form = props => {
-  const {rol} = props;
+  const {rol, getUserData} = props;
   return (
     <div className="form__container">
      <form action="/signup" method="post">
-      <Form1NewProject rol={rol}/>
-      <Form2Operations rol={rol}/>  
-      <Form3Talent rol={rol}/>
-      <Form4Ambassador rol={rol}/> 
-     <Form5LastCheck rol={rol}/>     
+      <Form1NewProject 
+        rol={rol}
+        getUserData={getUserData}
+      />
+      <Form2Operations 
+        rol={rol}
+        getUserData={getUserData}
+        />  
+      <Form3Talent 
+        rol={rol}
+        getUserData={getUserData}
+        />
+      <Form4Ambassador 
+        rol={rol}
+        getUserData={getUserData}
+        /> 
+     <Form5LastCheck 
+      rol={rol}
+      getUserData={getUserData}
+      />     
      </form>
     </div>
 
