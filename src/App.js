@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       email: '', 
-      rol: 'operations' ,
+      rol: 'head' ,
       devAsignation: devAsignation,
     };
     this.getUserData = this.getUserData.bind(this);

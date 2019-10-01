@@ -12,7 +12,7 @@ const Form = props => {
      <form action="/signup" method="post">
       <Form1NewProject rol={rol}/>
       <Form2Operations rol={rol}/>
-      <Form3Ambassador rol={rol}/>
+      {(rol==='ambassador'||rol==='head')? <Form3Ambassador rol={rol}/>:null}     
       <Form4Talent rol={rol}/>
       <Form5LastCheck rol={rol}/>
      </form>
