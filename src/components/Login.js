@@ -23,6 +23,9 @@ const Login = props => {
           <option value="embajada">embajada</option>
         </select>
       </div>
+      <div className="login__button-container">
+          <button className="login__button">entrar</button>
+      </div>
     </main>
   );
 };
