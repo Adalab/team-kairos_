@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
+import Form from './components/Form';
 import './App.scss';
 import Login from './components/Login';
 import DevelopersList from './components/DevelopersList';
@@ -35,7 +36,7 @@ class App extends React.Component {
         <DevelopersList devAsignation={devAsignation} />
         <NewProcess />
 
-        {/* <Form /> */}
+         <Form /> 
       </div>
     );
   }
