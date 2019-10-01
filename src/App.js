@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
-//import Form from './components/Form';
+import Form from './components/Form';
 import './App.scss';
 import Login from './components/Login';
 import DevelopersList from './components/DevelopersList';
@@ -33,7 +33,7 @@ class App extends React.Component {
           getUserData={this.getUserData} />
         <DevelopersList devAsignation={devAsignation} />
 
-        {/* <Form /> */}
+         <Form /> 
       </div>
     );
   }
