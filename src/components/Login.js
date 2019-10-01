@@ -19,9 +19,9 @@ const Login = props => {
         <select id="rol" name="rol" onChange={getUserData}>
           <option value="">elige tu rol</option>
           <option value="head">head</option>
-          <option value="operaciones">operaciones</option>
-          <option value="talento">talento</option>
-          <option value="embajada">embajada</option>
+          <option value="operations">operaciones</option>
+          <option value="talent">talento</option>
+          <option value="ambassador">embajada</option>
         </select>
       </div>
       <div className="login__button-container">

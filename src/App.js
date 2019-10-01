@@ -15,7 +15,25 @@ class App extends React.Component {
     super(props);
     this.state = {
       email: '', 
-      rol: '' ,
+      rol: '',     
+
+      developer: '',
+      emailDev:'',
+      client: '',
+      project:'',
+      rate:'',
+      date: '',
+
+      code:'',
+      description:'',
+      task:'',
+
+      ambassador:'',
+
+      sendChecked:'',
+
+      dataChecked:'',
+
       devAsignation: devAsignation,
     };
     this.getUserData = this.getUserData.bind(this);
@@ -27,7 +45,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { email, devAsignation } = this.state;
+    const { email, devAsignation, rol} = this.state;
     return (
       <div className="app">
         <Header email={email}/>
@@ -53,16 +71,19 @@ class App extends React.Component {
               );
             }} />
           <Route path="/newprocess" component={NewProcess} />
-          <Route path="/form/:id" component={Form} />
+          {/* <Route path="/form/:id" component={Form} /> */}
+          <Route 
+            path="/form/:id"  
+            render={() => {
+              return (
+                <Form 
+                rol = {rol}
+                getUserData= {this.getUserData} /> 
+              );
+            }} />
 
         </Switch>
 
-        {/* <Login
-          email={email}
-          getUserData={this.getUserData} />
-        <DevelopersList devAsignation={devAsignation} />
-        <NewProcess />
-        <Form />  */}
       </div>
     );
   }
