@@ -14,8 +14,9 @@ const DevelopersList = (props) => {
             <Link to={`/form/${dev.code}`}>
               <div className="developer__card-container">
                 <h3 className="developer__name">{dev.developer}</h3>
-                <p className="developer__code">{dev.code}</p>
-                <p className="developer__status">fase: {dev.status}</p>
+                <p className="developer__project"> proyecto: {dev.project}</p>
+                <p className="developer__client">cliente: {dev.client}</p>
+                <p className="developer__date">fecha: {dev.date}</p>
               </div>
             </Link>
           </li>
