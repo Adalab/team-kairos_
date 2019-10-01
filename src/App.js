@@ -40,6 +40,7 @@ class App extends React.Component {
     };
     this.getUserData = this.getUserData.bind(this);
     this.changeSteps = this.changeSteps.bind(this);
+    this.createProject = this.createProject.bind(this);
     this.login = this.login.bind(this);
   }
 
@@ -56,6 +57,36 @@ class App extends React.Component {
       newSteps[id] = true;
       return {
         steps: newSteps
+      }
+    })
+  }
+
+  createProject(event) {
+    const id = event.currentTarget.id;
+    this.setState(prevState => {
+      const newSteps = { ...prevState.steps };
+
+      const newDevAsignation = [...prevState.devAsignation];
+
+      newDevAsignation.push({
+        developer: 'rogelia',
+        emailDev: 'juan@gmaill',
+        client: 'zara',
+        project: 'tienda',
+        rate: '1000 euros',
+        date: '10 mayo',
+        code: '3456aa34',
+        description: 'un proyecto muy bonito',
+        task: '5',
+        ambassador: 'maria emilia',
+        sendChecked: true,
+        dataChecked: true,
+      });
+
+      newSteps[id] = true;
+      return {
+        steps: newSteps,
+        devAsignation: newDevAsignation
       }
     })
   }
@@ -98,7 +129,7 @@ class App extends React.Component {
             return (
               <NewProcess
               rol={rol}
-                changeSteps={this.changeSteps} />
+              createProject = {this.createProject} />
             );
           }} />
           <Route

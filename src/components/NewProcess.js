@@ -5,13 +5,13 @@ import Form1NewProject from './Form1NewProject';
 import '../styles/NewProcess.scss';
 
 const NewProcess = props => {
-  const {changeSteps,rol} = props;
+  const {createProject,rol} = props;
   return (
     <main className="main__new-process">
       <form action="">
         <Form1NewProject rol={rol} />
         <div className="new-process__button-container">
-          <Link to="/developerlist"><button className="create__button" type="submit" id="headfirst" onClick={changeSteps}>Confirmar</button></Link>
+          <Link to="/developerlist"><button className="create__button" type="submit" id="headfirst" onClick={createProject}>Confirmar</button></Link>
         </div>
       </form>
     </main>
@@ -19,5 +19,6 @@ const NewProcess = props => {
 }
 NewProcess.propTypes = {
   changeSteps: PropTypes.func.isRequired,
+  rol: PropTypes.string.isRequired
 }
 export default NewProcess;
