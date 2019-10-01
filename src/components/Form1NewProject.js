@@ -13,7 +13,7 @@ const Form1NewProject = props => {
       <label htmlFor="project">proyecto</label>
       <input type="text" id="project" name="project" disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
       <label htmlFor="rate">Tarifa</label>
-      <input type="text" id="rate" name="rate" className={!((rol === 'head') || (rol === 'operations')) && 'hidden'} disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
+      <input type="text" id="rate" name="rate" className={!((rol === 'head') || (rol === 'operations')) ? 'hidden': ''} disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
       <label htmlFor="date">Fecha de incorporación</label>
       <input type="text" id="date" name="date" disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
     </fieldset>

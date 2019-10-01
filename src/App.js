@@ -14,76 +14,102 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '', 
-      rol: '',     
-
+      logged: false,
+      email: '',
+      rol: '',
       developer: '',
-      emailDev:'',
+      emailDev: '',
       client: '',
-      project:'',
-      rate:'',
+      project: '',
+      rate: '',
       date: '',
-
-      code:'',
-      description:'',
-      task:'',
-
-      ambassador:'',
-
-      sendChecked:'',
-
-      dataChecked:'',
-
+      code: '',
+      description: '',
+      task: '',
+      ambassador: '',
+      sendChecked: '',
+      dataChecked: '',
       devAsignation: devAsignation,
+      steps: {
+        headfirst: false,
+        operations: false,
+        talent: false,
+        ambassador: false,
+        headend: false,
+      }
     };
     this.getUserData = this.getUserData.bind(this);
+    this.changeSteps = this.changeSteps.bind(this);
+    this.login = this.login.bind(this);
   }
+
   getUserData(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
-    this.setState({[id]: value });
+    this.setState({ [id]: value });
+  }
+
+  changeSteps(event) {
+    const id = event.currentTarget.id;
+    this.setState(prevState => {
+      const newSteps = { ...prevState.steps };
+      newSteps[id] = true;
+      return {
+        steps: newSteps
+      }
+    })
+  }
+
+  login(event){
+    this.setState({logged:true})
   }
 
   render() {
-    const { email, devAsignation, rol} = this.state;
+    const { email, devAsignation, rol, logged } = this.state;
     return (
       <div className="app">
-        <Header email={email}/>
+        <Header 
+        email={email}
+        logged= {logged}/>
 
         <Switch>
-          <Route exact 
-            path="/" 
+          <Route exact
+            path="/"
             render={() => {
               return (
                 <Login
+                  login={this.login}
                   email={email}
-                  getUserData={this.getUserData} 
+                  getUserData={this.getUserData}
                 />
               );
             }} />
-          <Route 
+          <Route
             path="/developerlist"
             render={() => {
               return (
-                <DevelopersList 
-                  devAsignation={devAsignation} 
+                <DevelopersList
+                  devAsignation={devAsignation}
+
                 />
               );
             }} />
-          <Route path="/newprocess" component={NewProcess} />
-          {/* <Route path="/form/:id" component={Form} /> */}
-          <Route 
-            path="/form/:id"  
+          <Route path="/newprocess" render={() => {
+            return (
+              <NewProcess
+                changeSteps={this.changeSteps} />
+            );
+          }} />
+          <Route
+            path="/form/:id"
             render={() => {
               return (
-                <Form 
-                rol = {rol}
-                getUserData= {this.getUserData} /> 
+                <Form
+                  rol={rol}
+                  getUserData={this.getUserData} />
               );
             }} />
-
         </Switch>
-
       </div>
     );
   }
