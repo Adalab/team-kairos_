@@ -11,7 +11,7 @@ const NewProcess = props => {
       <form action="">
         <Form1NewProject />
         <div className="new-process__button-container">
-          <Link to="/developerlist"><button className="create__button" type="submit" id="headfirst" onClick={changeSteps}>Iniciar Proceso</button></Link>
+          <Link to="/developerlist"><button className="create__button" type="submit" id="headfirst" onClick={changeSteps}>Confirmar</button></Link>
         </div>
       </form>
     </main>

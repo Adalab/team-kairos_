@@ -17,24 +17,18 @@ class App extends React.Component {
       logged: false,
       email: '',
       rol: '',
-
       developer: '',
       emailDev: '',
       client: '',
       project: '',
       rate: '',
       date: '',
-
       code: '',
       description: '',
       task: '',
-
       ambassador: '',
-
       sendChecked: '',
-
       dataChecked: '',
-
       devAsignation: devAsignation,
       steps: {
         headfirst: false,
@@ -48,11 +42,13 @@ class App extends React.Component {
     this.changeSteps = this.changeSteps.bind(this);
     this.login = this.login.bind(this);
   }
+
   getUserData(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
     this.setState({ [id]: value });
   }
+
   changeSteps(event) {
     const id = event.currentTarget.id;
     this.setState(prevState => {
@@ -63,9 +59,11 @@ class App extends React.Component {
       }
     })
   }
+
   login(event){
     this.setState({logged:true})
   }
+
   render() {
     const { email, devAsignation, rol, logged } = this.state;
     return (
