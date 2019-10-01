@@ -45,7 +45,9 @@ class App extends React.Component {
   }
 
   getUserData(event) {
+    
     const value = event.currentTarget.value;
+    console.log(value);
     const id = event.currentTarget.id;
     this.setState({ [id]: value });
   }
@@ -67,20 +69,14 @@ class App extends React.Component {
       const newSteps = { ...prevState.steps };
 
       const newDevAsignation = [...prevState.devAsignation];
-
+      const {developer,emailDev,client,project,rate,date} = this.state;
       newDevAsignation.push({
-        developer: 'rogelia',
-        emailDev: 'juan@gmaill',
-        client: 'zara',
-        project: 'tienda',
-        rate: '1000 euros',
-        date: '10 mayo',
-        code: '3456aa34',
-        description: 'un proyecto muy bonito',
-        task: '5',
-        ambassador: 'maria emilia',
-        sendChecked: true,
-        dataChecked: true,
+        developer: developer,
+        emailDev: emailDev,
+        client: client,
+        project: project,
+        rate: rate,
+        date: date,
       });
 
       newSteps[id] = true;
@@ -129,7 +125,9 @@ class App extends React.Component {
             return (
               <NewProcess
               rol={rol}
-              createProject = {this.createProject} />
+              createProject = {this.createProject} 
+              getUserData={this.getUserData}
+              />              
             );
           }} />
           <Route
