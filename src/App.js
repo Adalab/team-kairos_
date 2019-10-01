@@ -40,11 +40,14 @@ class App extends React.Component {
     };
     this.getUserData = this.getUserData.bind(this);
     this.changeSteps = this.changeSteps.bind(this);
+    this.createProject = this.createProject.bind(this);
     this.login = this.login.bind(this);
   }
 
   getUserData(event) {
+    
     const value = event.currentTarget.value;
+    console.log(value);
     const id = event.currentTarget.id;
     this.setState({ [id]: value });
   }
@@ -56,6 +59,30 @@ class App extends React.Component {
       newSteps[id] = true;
       return {
         steps: newSteps
+      }
+    })
+  }
+
+  createProject(event) {
+    const id = event.currentTarget.id;
+    this.setState(prevState => {
+      const newSteps = { ...prevState.steps };
+
+      const newDevAsignation = [...prevState.devAsignation];
+      const {developer,emailDev,client,project,rate,date} = this.state;
+      newDevAsignation.push({
+        developer: developer,
+        emailDev: emailDev,
+        client: client,
+        project: project,
+        rate: rate,
+        date: date,
+      });
+
+      newSteps[id] = true;
+      return {
+        steps: newSteps,
+        devAsignation: newDevAsignation
       }
     })
   }
@@ -98,7 +125,10 @@ class App extends React.Component {
           <Route path="/newprocess" render={() => {
             return (
               <NewProcess
-                changeSteps={this.changeSteps} />
+              rol={rol}
+              createProject = {this.createProject} 
+              getUserData={this.getUserData}
+              />              
             );
           }} />
           <Route
