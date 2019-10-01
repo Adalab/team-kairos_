@@ -25,7 +25,7 @@ const Login = props => {
         </select>
       </div>
       <div className="login__button-container">
-          <Link to="/developerlist"><button className="login__button" onClick={login}>Enntrar</button></Link>
+          <Link to="/developerlist"><button className="login__button" onClick={login}>Entrar</button></Link>
       </div>
     </main>
   );
