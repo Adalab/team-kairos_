@@ -6,15 +6,15 @@ import Form4Talent from './Form4Talent';
 import Form5LastCheck from './Form5LastCheck';
 
 const Form = props => {
-
+  const {rol} = props;
   return (
     <div className="form__container">
      <form action="/signup" method="post">
-      <Form1NewProject />
-      <Form2Operations />
-      <Form3Ambassador />
-      <Form4Talent />
-      <Form5LastCheck />
+      <Form1NewProject rol={rol}/>
+      <Form2Operations rol={rol}/>
+      <Form3Ambassador rol={rol}/>
+      <Form4Talent rol={rol}/>
+      <Form5LastCheck rol={rol}/>
      </form>
     </div>
 

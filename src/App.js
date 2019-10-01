@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       email: '', 
-      rol: '' ,
+      rol: 'operations' ,
       devAsignation: devAsignation,
     };
     this.getUserData = this.getUserData.bind(this);
@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { email, devAsignation } = this.state;
+    const { email, devAsignation, rol } = this.state;
     return (
       <div className="app">
         <Header email={email}/>
@@ -33,7 +33,7 @@ class App extends React.Component {
           getUserData={this.getUserData} />
         <DevelopersList devAsignation={devAsignation} />
 
-         <Form /> 
+         <Form rol ={rol} /> 
       </div>
     );
   }
