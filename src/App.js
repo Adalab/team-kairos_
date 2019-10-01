@@ -14,6 +14,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      logged: false,
       email: '',
       rol: '',
 
@@ -45,6 +46,7 @@ class App extends React.Component {
     };
     this.getUserData = this.getUserData.bind(this);
     this.changeSteps = this.changeSteps.bind(this);
+    this.login = this.login.bind(this);
   }
   getUserData(event) {
     const value = event.currentTarget.value;
@@ -61,11 +63,16 @@ class App extends React.Component {
       }
     })
   }
+  login(event){
+    this.setState({logged:true})
+  }
   render() {
-    const { email, devAsignation, rol } = this.state;
+    const { email, devAsignation, rol, logged } = this.state;
     return (
       <div className="app">
-        <Header email={email} />
+        <Header 
+        email={email}
+        logged= {logged}/>
 
         <Switch>
           <Route exact
@@ -73,6 +80,7 @@ class App extends React.Component {
             render={() => {
               return (
                 <Login
+                  login={this.login}
                   email={email}
                   getUserData={this.getUserData}
                 />

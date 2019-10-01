@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 const Login = props => {
 
-  const { email, getUserData} = props;
+  const { email, getUserData, login} = props;
 
   return (
     <main className="main__login">
@@ -25,13 +25,14 @@ const Login = props => {
         </select>
       </div>
       <div className="login__button-container">
-          <Link to="/developerlist"><button className="login__button">entrar</button></Link>
+          <Link to="/developerlist"><button className="login__button" onClick={login}>Enntrar</button></Link>
       </div>
     </main>
   );
 };
 
 Login.propTypes = {
+  login: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
   getUserData: PropTypes.func.isRequired
 }
