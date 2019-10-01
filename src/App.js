@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Form from './components/Form';
 import './App.scss';
@@ -30,12 +31,38 @@ class App extends React.Component {
     return (
       <div className="app">
         <Header email={email}/>
-        <Login
+
+        <Switch>
+          <Route exact 
+            path="/" 
+            render={() => {
+              return (
+                <Login
+                  email={email}
+                  getUserData={this.getUserData} 
+                />
+              );
+            }} />
+          <Route 
+            path="/developerlist"
+            render={() => {
+              return (
+                <DevelopersList 
+                  devAsignation={devAsignation} 
+                />
+              );
+            }} />
+          <Route path="/newprocess" component={NewProcess} />
+          <Route path="/form/:id" component={Form} />
+
+        </Switch>
+
+        {/* <Login
           email={email}
           getUserData={this.getUserData} />
         <DevelopersList devAsignation={devAsignation} />
         <NewProcess />
-        <Form /> 
+        <Form />  */}
       </div>
     );
   }
