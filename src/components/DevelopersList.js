@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import '../styles/DevelopersList.scss';
 
 const DevelopersList = (props) => {
-  const { devAsignation } = props;
+  const { devAsignation, rol } = props;
   return (
     <main className="main__developers">
-      <Link to="/newprocess"><button className="create__developer-button">Iniciar proceso</button></Link>
+        {(rol === 'head') && <Link to="/newprocess"> <button className="create__developer-button">Iniciar proceso</button></Link>}
       <ul className="developers__list">
         {devAsignation.map((dev, index) =>
           <li className="developers__item" key={index}>
@@ -26,6 +26,7 @@ const DevelopersList = (props) => {
   );
 }
 DevelopersList.propTypes = {
+  rol: PropTypes.string.isRequired,
   devAsignation: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 export default DevelopersList;

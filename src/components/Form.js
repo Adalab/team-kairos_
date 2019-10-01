@@ -8,7 +8,7 @@ import Form3Talent from './Form3Talent';
 import Form5LastCheck from './Form5LastCheck';
 
 const Form = props => {
-  const {rol, getUserData, changeSteps} = props;
+  const {rol, getUserData, changeSteps, steps} = props;
   return (
     <div className="form__container">
      <form action="/signup" method="post">
@@ -20,19 +20,25 @@ const Form = props => {
         rol={rol}
         getUserData={getUserData}
         changeSteps={changeSteps} 
+        steps={steps}
         />  
       <Form3Talent 
         rol={rol}
         getUserData={getUserData}
-        changeSteps={changeSteps} 
+        changeSteps={changeSteps}
+        steps={steps} 
         />
       <Form4Ambassador 
         rol={rol}
         getUserData={getUserData}
+        changeSteps={changeSteps}
+        steps={steps}  
         /> 
      <Form5LastCheck 
       rol={rol}
       getUserData={getUserData}
+      changeSteps={changeSteps} 
+      steps={steps} 
       />     
      </form>
       <div className="developer-container">
@@ -44,6 +50,7 @@ const Form = props => {
 }
 
 Form.propTypes = {
+  steps: PropTypes.object.isRequired,
   rol: PropTypes.string.isRequired,
   getUserData: PropTypes.func.isRequired,
   changeSteps: PropTypes.func.isRequired,

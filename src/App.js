@@ -65,7 +65,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { email, devAsignation, rol, logged } = this.state;
+    const { email, devAsignation, rol, logged, steps } = this.state;
     return (
       <div className="app">
         <Header 
@@ -89,6 +89,7 @@ class App extends React.Component {
             render={() => {
               return (
                 <DevelopersList
+                  rol={rol}
                   devAsignation={devAsignation}
 
                 />
@@ -107,7 +108,8 @@ class App extends React.Component {
                 <Form
                   rol={rol}
                   getUserData={this.getUserData}
-                  changeSteps={this.changeSteps} />
+                  changeSteps={this.changeSteps}
+                  steps = {steps} />
               );
             }} />
         </Switch>
