@@ -1,9 +1,12 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Form from './components/Form';
 import './App.scss';
 import Login from './components/Login';
 import DevelopersList from './components/DevelopersList';
+import NewProcess from './components/NewProcess';
+//import Form from './components/Form';
 import { devAsignation } from './components/Data';
 
 
@@ -45,16 +48,42 @@ class App extends React.Component {
     const { email, devAsignation, rol} = this.state;
     return (
       <div className="app">
-        <Header 
-          email={email}/>
-        <Login
-          email={email}
-          getUserData={this.getUserData} />
-        <DevelopersList 
-          devAsignation={devAsignation} />
-        <Form 
-          rol = {rol}
-          getUserData= {this.getUserData} /> 
+        <Header email={email}/>
+
+        <Switch>
+          <Route exact 
+            path="/" 
+            render={() => {
+              return (
+                <Login
+                  email={email}
+                  getUserData={this.getUserData} 
+                />
+              );
+            }} />
+          <Route 
+            path="/developerlist"
+            render={() => {
+              return (
+                <DevelopersList 
+                  devAsignation={devAsignation} 
+                />
+              );
+            }} />
+          <Route path="/newprocess" component={NewProcess} />
+          {/* <Route path="/form/:id" component={Form} /> */}
+          <Route 
+            path="/form/:id"  
+            render={() => {
+              return (
+                <Form 
+                rol = {rol}
+                getUserData= {this.getUserData} /> 
+              );
+            }} />
+
+        </Switch>
+
       </div>
     );
   }

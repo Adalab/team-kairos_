@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/Login.scss';
+import {Link} from 'react-router-dom';
 
 
 const Login = props => {
@@ -22,6 +23,9 @@ const Login = props => {
           <option value="talent">talento</option>
           <option value="ambassador">embajada</option>
         </select>
+      </div>
+      <div className="login__button-container">
+          <Link to="/developerlist"><button className="login__button">entrar</button></Link>
       </div>
     </main>
   );
