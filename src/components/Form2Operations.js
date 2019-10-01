@@ -6,8 +6,14 @@ const Form2Operations = props => {
     <fieldset>
       <label htmlFor="code">Código proyecto</label>
       <input type="text" id="code" name="code" disabled={!(rol==='operations')&&'disabled'}/>
-      <label htmlFor="ambassador">Embajador</label>
-      <input type="text" id="ambassador" name="ambassador" disabled={!(rol==='operations')&&'disabled'} />
+
+      <label htmlFor ="description">Descripción</label>
+      <input type="textarea" id="description" name = "description" disabled={!(rol==='operations')&&'disabled'}/>
+
+      <label htmlFor="task">Nº tarea de proyecto</label>
+      <input type="text" id="task" name="task" disabled={!(rol==='operations')&&'disabled'}/>
+
+      
   </fieldset>
   );
 

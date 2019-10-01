@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form3Ambassador = props => {
+const Form4Ambassador = props => {
   const {rol} = props;
   return (
     <fieldset>
@@ -11,4 +11,4 @@ const Form3Ambassador = props => {
 
 }
 
-export default Form3Ambassador;
+export default Form4Ambassador;
