@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Form4Ambassador = props => {
   const { rol, getUserData } = props;
@@ -9,6 +10,11 @@ const Form4Ambassador = props => {
   </fieldset>
   );
 
+}
+
+Form4Ambassador.propTypes = {
+  rol: PropTypes.string.isRequired,
+  getUserData: PropTypes.func.isRequired
 }
 
 export default Form4Ambassador;

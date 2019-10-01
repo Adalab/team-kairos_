@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Form5LastCheck = props => {
   const { rol, getUserData } = props;
@@ -9,6 +10,11 @@ const Form5LastCheck = props => {
   </fieldset>
   );
 
+}
+
+Form5LastCheck.propTypes = {
+  rol: PropTypes.string.isRequired,
+  getUserData: PropTypes.func.isRequired
 }
 
 export default Form5LastCheck;

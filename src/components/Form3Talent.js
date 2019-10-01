@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Form3Talent = props => {
   const { rol, getUserData } = props;
@@ -9,6 +10,11 @@ const Form3Talent = props => {
   </fieldset>
   );
 
+}
+
+Form3Talent.propTypes = {
+  rol: PropTypes.string.isRequired,
+  getUserData: PropTypes.func.isRequired
 }
 
 export default Form3Talent;

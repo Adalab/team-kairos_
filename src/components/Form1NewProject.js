@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Form1NewProject = props => {
   const { rol, getUserData } = props;
@@ -21,6 +22,10 @@ const Form1NewProject = props => {
 
 }
 
+Form1NewProject.propTypes = {
+  rol: PropTypes.string.isRequired,
+  getUserData: PropTypes.func.isRequired
+}
 
 export default Form1NewProject;
 
