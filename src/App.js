@@ -14,10 +14,28 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '', 
-      rol: '' ,
+      email: '',
+      rol: '',
+
+      developer: '',
+      emailDev: '',
+      client: '',
+      project: '',
+      rate: '',
+      date: '',
+
+      code: '',
+      description: '',
+      task: '',
+
+      ambassador: '',
+
+      sendChecked: '',
+
+      dataChecked: '',
+
       devAsignation: devAsignation,
-      steps : {
+      steps: {
         headfirst: false,
         operations: false,
         talent: false,
@@ -31,53 +49,60 @@ class App extends React.Component {
   getUserData(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
-    this.setState({[id]: value });
+    this.setState({ [id]: value });
   }
-  changeSteps (event) {
+  changeSteps(event) {
     const id = event.currentTarget.id;
-    this.setState (prevState => {
-      const newSteps = {...prevState.steps};
-      newSteps[id] = true;  
+    this.setState(prevState => {
+      const newSteps = { ...prevState.steps };
+      newSteps[id] = true;
       return {
         steps: newSteps
       }
-    }) 
+    })
   }
   render() {
-    const { email, devAsignation } = this.state;
+    const { email, devAsignation, rol } = this.state;
     return (
       <div className="app">
-        <Header email={email}/>
+        <Header email={email} />
 
         <Switch>
-          <Route exact 
-            path="/" 
+          <Route exact
+            path="/"
             render={() => {
               return (
                 <Login
                   email={email}
-                  getUserData={this.getUserData} 
+                  getUserData={this.getUserData}
                 />
               );
             }} />
-          <Route 
+          <Route
             path="/developerlist"
             render={() => {
               return (
-                <DevelopersList 
-                  devAsignation = {devAsignation} 
-                 
+                <DevelopersList
+                  devAsignation={devAsignation}
+
                 />
               );
             }} />
           <Route path="/newprocess" render={() => {
             return (
-              <NewProcess 
-              changeSteps = {this.changeSteps}/>
+              <NewProcess
+                changeSteps={this.changeSteps} />
             );
-          }} />         
-          <Route path="/form/:id" component={Form} />
-
+          }} />
+          <Route
+            path="/form/:id"
+            render={() => {
+              return (
+                <Form
+                  rol={rol}
+                  getUserData={this.getUserData} />
+              );
+            }} />
         </Switch>
       </div>
     );
