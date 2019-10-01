@@ -34,9 +34,10 @@ class App extends React.Component {
     this.setState({[id]: value });
   }
   changeSteps (event) {
+    const id = event.currentTarget.id;
     this.setState (prevState => {
       const newSteps = {...prevState.steps};
-      newSteps.headfirst = true;  
+      newSteps[id] = true;  
       return {
         steps: newSteps
       }
