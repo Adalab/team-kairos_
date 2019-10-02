@@ -78,7 +78,7 @@ class App extends React.Component {
         project: project,
         rate: rate,
         date: date,
-        id: id,       
+        id: developer,       
         code: '',
         description: '',
         task: '',
