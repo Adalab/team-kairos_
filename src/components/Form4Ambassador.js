@@ -9,7 +9,7 @@ const Form4Ambassador = props => {
     <label htmlFor="sendChecked">Enviar mail a empleado</label>
     <input type="checkbox" id="sendChecked" name="sendChecked" 
     checked={sendChecked}
-    disabled={(steps.ambassador ||!(rol === 'ambassador'))}
+    disabled={!steps.talent || steps.ambassador ||!(rol === 'ambassador')}
     onChange={getUserData} 
     value={sendChecked} required/>
     {(rol === 'ambassador') && <input  type="submit"   
