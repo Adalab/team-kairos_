@@ -6,14 +6,19 @@ const Form5LastCheck = props => {
   return (
     <form onSubmit={changeSteps} id="headend" data-userid={id}>
       <label htmlFor="dataChecked">Recepción datos</label>
-      <input type="checkbox" id="dataChecked" name="dataChecked" 
-      checked={dataChecked}
-      disabled={!steps.talent  || !steps.ambassador || !steps.operations || steps.headend || !(rol === 'head')}
-      onChange={getUserData} value={dataChecked} required/>
-      {(rol === 'head') && !steps.headend && <input  type="submit" 
-      disabled= { !steps.talent  || !steps.ambassador || !steps.operations || steps.headend }
-      value="Confirmar"/>}
-  </form>
+      <input
+        type="checkbox"
+        id="dataChecked"
+        name="dataChecked"
+        checked={dataChecked}
+        disabled={!steps.talent || !steps.ambassador || !steps.operations || steps.headend || !(rol === 'head')}
+        onChange={getUserData}
+        value={dataChecked}
+        required />
+        {(rol === 'head') && !steps.headend && <input type="submit"
+        disabled={!steps.talent || !steps.ambassador || !steps.operations || steps.headend}
+        value="Confirmar" />}
+    </form>
   );
 }
 

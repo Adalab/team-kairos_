@@ -8,7 +8,7 @@ import Form3Talent from './Form3Talent';
 import Form5LastCheck from './Form5LastCheck';
 
 const Form = props => {
-  const { rol, getUserData, changeSteps, routerProps, devAsignation, codeState, descriptionState,taskState, ambassadorState, sendCheckedState, dataCheckedState  } = props;
+  const { rol, getUserData, changeSteps, routerProps, devAsignation, codeState, descriptionState, taskState, ambassadorState, sendCheckedState, dataCheckedState } = props;
   const asignationId = routerProps.match.params.asignationId;
 
   const process = devAsignation.filter(item => item.id === asignationId);
@@ -17,62 +17,74 @@ const Form = props => {
   const { developer, emailDev, client, project, rate, date, code, description, task, ambassador, sendChecked, dataChecked, id, steps } = process[0];
   return (
     <div className="form__container">
-     <section>
-      <Form1NewProject 
-        rol={rol}
-        getUserData={getUserData}
-        steps={steps}
 
-        developer={developer}
-        emailDev={emailDev}
-        client={client}
-        project={project}
-        rate={rate}
-        date={date}
-      />
-      <Form2Operations 
-        rol={rol}
-        getUserData={getUserData}
-        changeSteps={changeSteps} 
-        steps={steps}
+      <section className="diagram">
+        <p>Pendiente de aprobación:</p>
+        <div className="info-container">
+          {!steps.operations && <div className="info">o</div>}
+          {!steps.talent && <div className="info">{!steps.talent ? 't' : ''}</div>}
+          {!steps.ambassador && <div className="info">a</div>}
+          {!steps.headend && <div className="info">h</div>}
+          {steps.headend && <p className="info-end">asignación cerrada</p>}
+        </div>
+      </section>
 
-        code ={code}
-        description={description}
-        task={task}
-        id={id}
-        codeState={codeState}
-        descriptionState={descriptionState}
-        taskState={taskState}
-        />  
-      <Form3Talent 
-        rol={rol}
-        getUserData={getUserData}
-        changeSteps={changeSteps}
-        steps={steps}
-        
-        ambassador={ambassador}
-        id={id}
-        ambassadorState={ambassadorState}
+      <section>
+        <Form1NewProject
+          rol={rol}
+          getUserData={getUserData}
+          steps={steps}
+
+          developer={developer}
+          emailDev={emailDev}
+          client={client}
+          project={project}
+          rate={rate}
+          date={date}
         />
-      <Form4Ambassador 
-        rol={rol}
-        getUserData={getUserData}
-        changeSteps={changeSteps}
-        steps={steps}
-        
-        sendChecked={sendCheckedState}
-        id={id}
-        /> 
-     <Form5LastCheck 
-      rol={rol}
-      getUserData={getUserData}
-      changeSteps={changeSteps} 
-      steps={steps} 
+        <Form2Operations
+          rol={rol}
+          getUserData={getUserData}
+          changeSteps={changeSteps}
+          steps={steps}
 
-      dataChecked={dataCheckedState}
-      id={id}
-      />     
-     </section>
+          code={code}
+          description={description}
+          task={task}
+          id={id}
+          codeState={codeState}
+          descriptionState={descriptionState}
+          taskState={taskState}
+        />
+        <Form3Talent
+          rol={rol}
+          getUserData={getUserData}
+          changeSteps={changeSteps}
+          steps={steps}
+
+          ambassador={ambassador}
+          id={id}
+          ambassadorState={ambassadorState}
+        />
+        <Form4Ambassador
+          rol={rol}
+          getUserData={getUserData}
+          changeSteps={changeSteps}
+          steps={steps}
+
+          sendChecked={sendCheckedState}
+          id={id}
+        />
+        <Form5LastCheck
+          rol={rol}
+          getUserData={getUserData}
+          changeSteps={changeSteps}
+          steps={steps}
+
+          dataChecked={dataCheckedState}
+          id={id}
+        />
+      </section>
       <div className="developer-container">
         <Link to="/developerlist"><button className="developer-button">Volver</button></Link>
       </div>

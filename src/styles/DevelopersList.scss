@@ -1,17 +1,21 @@
 .main__developers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  
+  margin:30px;
+ 
 }
 .developer__link{
   text-decoration:none;
   color:inherit;
 }
 .developers__list {
+  padding:40px;
   list-style: none;
   display:flex;
+  align-content:flex-start;  
+  flex-direction:row;
+  flex-wrap: wrap;
+  // align-items: center;
+  margin:0;
+  padding:0;
   
 }
 .developers__item {
@@ -22,6 +26,7 @@
   border: solid 2px #999999;
   padding: 15px; 
   height:300px; 
+  width:220px;
   border-radius:5px;
 }
 .create__developer-button {
@@ -34,7 +39,7 @@
   display:flex;
   justify-content:center;
   align-items: center;
-  text-transform:capitalize;
+  text-transform:capitalize; 
   width:15px;
   height:15px;
   margin: 5px;
