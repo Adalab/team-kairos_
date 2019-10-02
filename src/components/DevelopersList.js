@@ -17,6 +17,12 @@ const DevelopersList = (props) => {
                 <p className="developer__project"> proyecto: {dev.project}</p>
                 <p className="developer__client">cliente: {dev.client}</p>
                 <p className="developer__date">fecha: {dev.date}</p>
+                <div className="info-container"> Pendiente de aprobación:
+                  <span className="info">{!dev.steps.operations ? 'o' : ''}</span>
+                  <span className="info">{!dev.steps.talent ? 't' : ''}</span>
+                  <span className="info">{!dev.steps.ambassador ? 'a' : ''}</span>
+                  <span className="info">{!dev.steps.headend ? 'h' : ''}</span>
+                </div>
               </div>
             </Link>
           </li>

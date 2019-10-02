@@ -20,7 +20,6 @@ const NewProcess = props => {
   );
 }
 NewProcess.propTypes = {
-  steps: PropTypes.object.isRequired,
   getUserData: PropTypes.func.isRequired,
   createProject: PropTypes.func.isRequired,
   rol: PropTypes.string.isRequired

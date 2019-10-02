@@ -78,7 +78,6 @@ const Form = props => {
 }
 
 Form.propTypes = {
-  steps: PropTypes.object.isRequired,
   rol: PropTypes.string.isRequired,
   getUserData: PropTypes.func.isRequired,
   changeSteps: PropTypes.func.isRequired,

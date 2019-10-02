@@ -48,7 +48,7 @@ class App extends React.Component {
   changeSteps(event) {
     event.preventDefault();
     const id = event.currentTarget.id;
-    const idUser = event.currentTarget.getAttribute('data-userId');
+    const idUser = event.currentTarget.getAttribute('data-userid');
     this.setState(prevState => {
       const newDevAsignation = [ ...prevState.devAsignation ];
       const index = newDevAsignation.findIndex((user)=> user.id === idUser);
