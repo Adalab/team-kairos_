@@ -5,10 +5,10 @@ import Form1NewProject from './Form1NewProject';
 import '../styles/NewProcess.scss';
 
 const NewProcess = props => {
-  const {createProject,rol,getUserData} = props;
-  const steps = {
-    headfirst: false
-  }
+  const {createProject,rol,getUserData,steps} = props;
+  // const steps = {
+  //   headfirst: false
+  // }
   return (
     <main className="main__new-process">
         <Form1NewProject

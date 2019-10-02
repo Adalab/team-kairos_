@@ -14,6 +14,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      steps:{ headfirst : false},
       logged: false,
       email: '',
       rol: '',
@@ -120,7 +121,11 @@ class App extends React.Component {
         }
 
       });
+      const newStepState = {...prevState.steps};
+      newStepState.headfirst = true;
+      //console.log(newStepState);
       return {
+        steps : newStepState,
         devAsignation: newDevAsignation
       }
     })
@@ -131,7 +136,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { email, devAsignation, rol, logged, code, description, task, ambassador, sendChecked, dataChecked } = this.state;
+    const { email, devAsignation, rol, logged, code, description, task, ambassador, sendChecked, dataChecked, steps } = this.state;
     return (
       <div className="app">
         <Header
@@ -168,6 +173,7 @@ class App extends React.Component {
                 createProject={this.createProject}
                 getUserData={this.getUserData}
                 changeSteps={this.changeSteps}
+                steps ={steps}
 
               />
             );
