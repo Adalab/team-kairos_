@@ -59,8 +59,8 @@ const Form1NewProject = props => {
       onChange={getUserData} 
       value={date} 
       required/>
-       <input className="create__button" type="submit" value="Confirmar" 
-       disabled={(steps.headfirst)} />
+       {rol === 'head' && <input className="create__button" type="submit" value="Confirmar" 
+       disabled={(steps.headfirst)} />}
     </form>
   );
 

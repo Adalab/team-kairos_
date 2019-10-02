@@ -11,7 +11,7 @@ const Form5LastCheck = props => {
       disabled={(steps.headend ||!(rol === 'head')) && 'disabled'}
       onChange={getUserData} value={dataChecked} required/>
       {(rol === 'head')&& !steps.headend && <input  type="submit" 
-      disabled= {(steps.headend)} 
+      disabled= { !steps.talent  || !steps.ambassador || !steps.operations|| !(steps.ambassador)}
       value="Confirmar"/>}
   </form>
   );
