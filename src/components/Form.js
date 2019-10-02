@@ -20,7 +20,6 @@ const Form = props => {
     <div className="form__container">
 
       <section className="diagram">
-        
         <div className="info-container-zoom">
           <p className="info-text">Pendiente de aprobación:</p>
           {!steps.operations && <div className="info">o</div>}
