@@ -60,7 +60,7 @@ const Form = props => {
         changeSteps={changeSteps}
         steps={steps}
         
-        sendChecked={sendChecked}
+        sendChecked={sendCheckedState}
         id={id}
         /> 
      <Form5LastCheck 
@@ -69,7 +69,7 @@ const Form = props => {
       changeSteps={changeSteps} 
       steps={steps} 
 
-      dataChecked={dataChecked}
+      dataChecked={dataCheckedState}
       id={id}
       />     
      </section>
