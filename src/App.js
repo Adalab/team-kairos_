@@ -23,7 +23,7 @@ class App extends React.Component {
       project: '',
       rate: '',
       date: '',
-      id:'',
+      id: '',
       code: '',
       description: '',
       task: '',
@@ -42,7 +42,27 @@ class App extends React.Component {
   getUserData(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
-    this.setState({ [id]: value });
+    if (id === 'sendChecked') {
+
+      this.setState((prevState) => {
+        const newSendChecked = prevState.sendChecked;
+        console.log(newSendChecked);
+        return {
+          sendChecked: !newSendChecked
+        }
+      } )
+
+    } else if (id === 'dataChecked') {
+      this.setState((prevState) => {
+        const newDataChecked = prevState.dataChecked;
+        return {
+
+          dataChecked: !newDataChecked
+        }
+      } )
+    } else {
+      this.setState({ [id]: value });
+    }
   }
 
   changeSteps(event) {
@@ -50,8 +70,8 @@ class App extends React.Component {
     const id = event.currentTarget.id;
     const idUser = event.currentTarget.getAttribute('data-userid');
     this.setState(prevState => {
-      const newDevAsignation = [ ...prevState.devAsignation ];
-      const index = newDevAsignation.findIndex((user)=> user.id === idUser);
+      const newDevAsignation = [...prevState.devAsignation];
+      const index = newDevAsignation.findIndex((user) => user.id === idUser);
       newDevAsignation[index].steps[id] = true;
       return {
         devAsignation: newDevAsignation
@@ -63,8 +83,8 @@ class App extends React.Component {
     event.preventDefault();
     this.setState(prevState => {
       const newDevAsignation = [...prevState.devAsignation];
-      const { developer, emailDev, client, project, rate, date} = this.state;
-      const newId = project+developer;
+      const { developer, emailDev, client, project, rate, date } = this.state;
+      const newId = project + developer;
       newDevAsignation.push({
         developer: developer,
         emailDev: emailDev,
@@ -72,7 +92,7 @@ class App extends React.Component {
         project: project,
         rate: rate,
         date: date,
-        id: newId,       
+        id: newId,
         code: '',
         description: '',
         task: '',
@@ -132,12 +152,12 @@ class App extends React.Component {
           <Route path="/newprocess" render={() => {
             return (
               <NewProcess
-              rol={rol}
-              createProject = {this.createProject} 
-              getUserData={this.getUserData}
-              changeSteps={this.changeSteps}
-              
-              />              
+                rol={rol}
+                createProject={this.createProject}
+                getUserData={this.getUserData}
+                changeSteps={this.changeSteps}
+
+              />
             );
           }} />
           <Route
@@ -149,7 +169,7 @@ class App extends React.Component {
                   routerProps={routerProps}
                   rol={rol}
                   getUserData={this.getUserData}
-                  
+
                   createProject={this.createProject}
                   changeSteps={this.changeSteps}
                   codeState={code}
@@ -158,7 +178,7 @@ class App extends React.Component {
                   ambassadorState={ambassador}
                   sendCheckedState={sendChecked}
                   dataCheckedState={dataChecked}
-                    />
+                />
               );
             }} />
 

@@ -6,7 +6,10 @@ const Form3Talent = props => {
   return (
     <form onSubmit={changeSteps} id="talent" data-userid={id}>
       <label htmlFor="ambassador">Embajador</label>
-      <input type="text" id="ambassador" name="ambassador" disabled={!(rol==='talent')&&'disabled'} onChange={getUserData}  value={ambassadorState || ambassador} required/>
+      <input type="text" id="ambassador" name="ambassador" 
+      disabled={(steps.talent || !(rol === 'talent')) && 'disabled'}
+      onChange={getUserData}  
+      value={ambassadorState || ambassador} required/>
       {(rol === 'talent') && <input type="submit" disabled= {(steps.talent)}  value="Confirmar"/>}
   </form>
   );
