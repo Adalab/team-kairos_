@@ -5,14 +5,14 @@ import Form1NewProject from './Form1NewProject';
 import '../styles/NewProcess.scss';
 
 const NewProcess = props => {
-  const {createProject,rol,getUserData,steps} = props;
+  const {createProject,rol,getUserData} = props;
   return (
     <main className="main__new-process">
         <Form1NewProject 
         rol={rol} 
         getUserData={getUserData} 
         createProject={createProject}
-        steps={steps}/>
+        />
         <div className="new-process__button-container">
           <Link to="/developerlist">Volver</Link>
       </div>

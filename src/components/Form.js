@@ -8,13 +8,13 @@ import Form3Talent from './Form3Talent';
 import Form5LastCheck from './Form5LastCheck';
 
 const Form = props => {
-  const { rol, getUserData, changeSteps, steps, routerProps, devAsignation } = props;
+  const { rol, getUserData, changeSteps, routerProps, devAsignation } = props;
   const asignationId = routerProps.match.params.asignationId;
 
   const process = devAsignation.filter(item => item.id === asignationId);
 
 
-  const { developer, emailDev, client, project, rate, date, code, description, task, ambassador, sendChecked, dataChecked } = process[0];
+  const { developer, emailDev, client, project, rate, date, code, description, task, ambassador, sendChecked, dataChecked, id, steps } = process[0];
   return (
     <div className="form__container">
      <section>
@@ -39,6 +39,7 @@ const Form = props => {
         code ={code}
         description={description}
         task={task}
+        id={id}
         />  
       <Form3Talent 
         rol={rol}
@@ -47,6 +48,7 @@ const Form = props => {
         steps={steps}
         
         ambassador={ambassador}
+        id={id}
         />
       <Form4Ambassador 
         rol={rol}
@@ -55,6 +57,7 @@ const Form = props => {
         steps={steps}
         
         sendChecked={sendChecked}
+        id={id}
         /> 
      <Form5LastCheck 
       rol={rol}
@@ -63,6 +66,7 @@ const Form = props => {
       steps={steps} 
 
       dataChecked={dataChecked}
+      id={id}
       />     
      </section>
       <div className="developer-container">

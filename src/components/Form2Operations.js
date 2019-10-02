@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Form2Operations = props => {
-  const { rol, getUserData, changeSteps, steps, code, description, task } = props;
+  const { rol, getUserData, changeSteps, steps, code, description, task, id } = props;
   return (
-    <form id="operations"  onSubmit={changeSteps}>
+    <form id="operations"  onSubmit={changeSteps} data-userId={id}>
       <label htmlFor="code">Código proyecto</label>
       <input type="text" id="code" name="code" disabled={!(rol==='operations')&&'disabled'} onChange={getUserData} value={code} required/>
 

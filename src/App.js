@@ -31,13 +31,7 @@ class App extends React.Component {
       sendChecked: '',
       dataChecked: '',
       devAsignation: devAsignation,
-      steps: {
-        headfirst: false,
-        operations: false,
-        talent: false,
-        ambassador: false,
-        headend: false,
-      }
+
     };
     this.getUserData = this.getUserData.bind(this);
     this.changeSteps = this.changeSteps.bind(this);
@@ -54,21 +48,23 @@ class App extends React.Component {
   changeSteps(event) {
     event.preventDefault();
     const id = event.currentTarget.id;
+    const idUser = event.currentTarget.getAttribute('data-userId');
     this.setState(prevState => {
-      const newSteps = { ...prevState.steps };
-      newSteps[id] = true;
+      const newDevAsignation = [ ...prevState.devAsignation ];
+      const index = newDevAsignation.findIndex((user)=> user.id === idUser);
+      newDevAsignation[index].steps[id] = true;
       return {
-        steps: newSteps
+        devAsignation: newDevAsignation
       }
     })
   }
 
   createProject(event) {
     event.preventDefault();
-    this.changeSteps(event);
     this.setState(prevState => {
       const newDevAsignation = [...prevState.devAsignation];
-      const { developer, emailDev, client, project, rate, date, id } = this.state;
+      const { developer, emailDev, client, project, rate, date} = this.state;
+      const newId = project+developer;
       newDevAsignation.push({
         developer: developer,
         emailDev: emailDev,
@@ -76,13 +72,20 @@ class App extends React.Component {
         project: project,
         rate: rate,
         date: date,
-        id: developer,       
+        id: newId,       
         code: '',
         description: '',
         task: '',
         ambassador: '',
-        sendChecked: '',
-        dataChecked: '',
+        sendChecked: false,
+        dataChecked: false,
+        steps: {
+          headfirst: true,
+          operations: false,
+          talent: false,
+          ambassador: false,
+          headend: false,
+        }
 
       });
       return {
@@ -96,7 +99,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { email, devAsignation, rol, logged, steps } = this.state;
+    const { email, devAsignation, rol, logged } = this.state;
     return (
       <div className="app">
         <Header
@@ -133,7 +136,7 @@ class App extends React.Component {
               createProject = {this.createProject} 
               getUserData={this.getUserData}
               changeSteps={this.changeSteps}
-              steps={steps}
+              
               />              
             );
           }} />
@@ -146,7 +149,7 @@ class App extends React.Component {
                   routerProps={routerProps}
                   rol={rol}
                   getUserData={this.getUserData}
-                  steps = {steps}
+                  
                   createProject={this.createProject}
                   changeSteps={this.changeSteps}  />
               );

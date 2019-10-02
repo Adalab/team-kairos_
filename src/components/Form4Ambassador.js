@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Form4Ambassador = props => {
-  const { rol, getUserData, changeSteps, steps, sendChecked } = props;
+  const { rol, getUserData, changeSteps, steps, sendChecked,id } = props;
   return (
-    <form onSubmit={changeSteps} id="ambassador">
+    <form onSubmit={changeSteps} id="ambassador" data-userId={id}>
     <label htmlFor="sendChecked">Enviar mail a empleado</label>
     <input type="checkbox" id="sendChecked" name="sendChecked" disabled={!(rol==='ambassador')&&'disabled'} onChange={getUserData} value={sendChecked} required/>
     {(rol === 'ambassador') && <input  type="submit"   disabled= {(steps.ambassador)} value="Confirmar"/>}
