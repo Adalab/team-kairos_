@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Form3Talent = props => {
-  const { rol, getUserData, changeSteps, steps} = props;
+  const { rol, getUserData, changeSteps, steps, ambassador} = props;
   return (
     <fieldset>
       <label htmlFor="ambassador">Embajador</label>
-      <input type="text" id="ambassador" name="ambassador" disabled={!(rol==='talent')&&'disabled'} onChange={getUserData}/>
+      <input type="text" id="ambassador" name="ambassador" disabled={!(rol==='talent')&&'disabled'} onChange={getUserData} value={ambassador}/>
       {(rol === 'talent') && <button onClick={changeSteps} id="talent" type="button" disabled= {(steps.talent)}>Confirmar</button>}
       
   </fieldset>

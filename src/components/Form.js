@@ -14,7 +14,7 @@ const Form = props => {
   const process = devAsignation.filter(item => item.id === asignationId);
 
 
-  const { developer, emailDev, client, project, rate, date, code, description, task, ambassador, } = process[0];
+  const { developer, emailDev, client, project, rate, date, code, description, task, ambassador, sendChecked, dataChecked } = process[0];
   return (
     <div className="form__container">
       <form action="/signup" method="post">
@@ -53,12 +53,16 @@ const Form = props => {
           getUserData={getUserData}
           changeSteps={changeSteps}
           steps={steps}
+
+          sendChecked={sendChecked}
         />
         <Form5LastCheck
           rol={rol}
           getUserData={getUserData}
           changeSteps={changeSteps}
           steps={steps}
+
+          dataChecked={dataChecked}
         />
       </form>
       <div className="developer-container">
