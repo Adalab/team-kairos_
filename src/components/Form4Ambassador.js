@@ -5,7 +5,7 @@ const Form4Ambassador = props => {
   const { rol, getUserData, changeSteps, steps, sendChecked, id } = props;
 
   return (
-    <form onSubmit={changeSteps} id="ambassador" data-userid={id}>
+    <form className="form-box" onSubmit={changeSteps} id="ambassador" data-userid={id}>
       <label htmlFor="sendChecked">Enviar mail a empleado</label>
       <input
         type="checkbox"

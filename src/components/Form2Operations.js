@@ -5,32 +5,40 @@ import PropTypes from 'prop-types';
 const Form2Operations = props => {
   const { rol, getUserData, changeSteps, steps, code, description, task, id, codeState, descriptionState, taskState } = props;
   return (
-    <form id="operations" onSubmit={changeSteps} data-userid={id}>
-      <label htmlFor="code">Código proyecto</label>
-      <input
-        type="text"
-        id="code"
-        name="code"
-        disabled={(steps.operations || !(rol === 'operations')) && 'disabled'}
-        onChange={getUserData}
-        value={(code.lenght > 0) ? code : codeState} required />
+    <form className="form-box" id="operations" onSubmit={changeSteps} data-userid={id}>
 
-      <label htmlFor="description">Descripción</label>
-      <input
-        type="textarea"
-        id="description"
-        name="description"
-        disabled={(steps.operations || !(rol === 'operations')) && 'disabled'}
-        onChange={getUserData}
-        value={descriptionState || description} required />
+      <div className="input-container">
+        <label htmlFor="code">Código proyecto</label>
+        <input
+          type="text"
+          id="code"
+          name="code"
+          disabled={(steps.operations || !(rol === 'operations')) && 'disabled'}
+          onChange={getUserData}
+          value={(code.lenght > 0) ? code : codeState} required />
+      </div>
 
-      <label htmlFor="task">Nº tarea de proyecto</label>
-      <input
-        type="text" id="task"
-        name="task"
-        disabled={(steps.operations || !(rol === 'operations')) && 'disabled'}
-        onChange={getUserData}
-        value={taskState || task} required />
+      <div className="input-container">
+        <label htmlFor="description">Descripción</label>
+        <input
+          type="textarea"
+          id="description"
+          name="description"
+          disabled={(steps.operations || !(rol === 'operations')) && 'disabled'}
+          onChange={getUserData}
+          value={descriptionState || description} required />
+      </div>
+
+      <div className="input-container">
+        <label htmlFor="task">Nº tarea de proyecto</label>
+        <input
+          type="text" id="task"
+          name="task"
+          disabled={(steps.operations || !(rol === 'operations')) && 'disabled'}
+          onChange={getUserData}
+          value={taskState || task} required />
+      </div>
+
       {(rol === 'operations') &&
         <input type="submit" value="Confirmar" disabled={(steps.operations)} />}
     </form>

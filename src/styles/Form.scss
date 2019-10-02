@@ -1,11 +1,25 @@
 .info-container-zoom{
     border: 2px solid #F2F2F2;
     border-radius: 5px;
-    width:300px;
+    width:350px;
     margin:30px;
     padding:15px;
 }
 
 .info-text{
     color:#B8B8B8;
+}
+
+.input-container{
+    display:flex;   
+    margin:10px 0;
+    justify-content: space-around; 
+}
+
+.form-box{
+    border: 2px solid #F2F2F2;
+    border-radius: 5px;
+    width:350px;
+    margin:30px;
+    padding:15px;
 }
