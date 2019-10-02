@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Form2Operations = props => {
-  const { rol, getUserData, changeSteps, steps } = props;
+  const { rol, getUserData, changeSteps, steps, code, description, task } = props;
   return (
     <form id="operations"  onSubmit={changeSteps}>
       <label htmlFor="code">Código proyecto</label>
-      <input type="text" id="code" name="code" disabled={!(rol==='operations')&&'disabled'} onChange={getUserData} required/>
+      <input type="text" id="code" name="code" disabled={!(rol==='operations')&&'disabled'} onChange={getUserData} value={code} required/>
 
       <label htmlFor ="description">Descripción</label>
-      <input type="textarea" id="description" name = "description" disabled={!(rol==='operations')&&'disabled'} onChange={getUserData} required/>
+      <input type="textarea" id="description" name = "description" disabled={!(rol==='operations')&&'disabled'} onChange={getUserData} value={description} required/>
 
       <label htmlFor="task">Nº tarea de proyecto</label>
-      <input type="text" id="task" name="task" disabled={!(rol==='operations')&&'disabled'} onChange={getUserData} required/> 
+      <input type="text" id="task" name="task" disabled={!(rol==='operations')&&'disabled'} onChange={getUserData}  value={task} required/> 
       {(rol === 'operations') && <input type="submit" value="Confirmar" disabled={(steps.operations)}/>}  
   </form>
   );

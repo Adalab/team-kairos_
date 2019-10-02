@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Form1NewProject from './Form1NewProject';
 import Form2Operations from './Form2Operations';
@@ -8,7 +8,13 @@ import Form3Talent from './Form3Talent';
 import Form5LastCheck from './Form5LastCheck';
 
 const Form = props => {
-  const {rol, getUserData, changeSteps, steps} = props;
+  const { rol, getUserData, changeSteps, steps, routerProps, devAsignation } = props;
+  const asignationId = routerProps.match.params.asignationId;
+
+  const process = devAsignation.filter(item => item.id === asignationId);
+
+
+  const { developer, emailDev, client, project, rate, date, code, description, task, ambassador, sendChecked, dataChecked } = process[0];
   return (
     <div className="form__container">
      <section>
@@ -16,30 +22,47 @@ const Form = props => {
         rol={rol}
         getUserData={getUserData}
         steps={steps}
+
+        developer={developer}
+        emailDev={emailDev}
+        client={client}
+        project={project}
+        rate={rate}
+        date={date}
       />
       <Form2Operations 
         rol={rol}
         getUserData={getUserData}
         changeSteps={changeSteps} 
         steps={steps}
+
+        code ={code}
+        description={description}
+        task={task}
         />  
       <Form3Talent 
         rol={rol}
         getUserData={getUserData}
         changeSteps={changeSteps}
-        steps={steps} 
+        steps={steps}
+        
+        ambassador={ambassador}
         />
       <Form4Ambassador 
         rol={rol}
         getUserData={getUserData}
         changeSteps={changeSteps}
-        steps={steps}  
+        steps={steps}
+        
+        sendChecked={sendChecked}
         /> 
      <Form5LastCheck 
       rol={rol}
       getUserData={getUserData}
       changeSteps={changeSteps} 
       steps={steps} 
+
+      dataChecked={dataChecked}
       />     
      </section>
       <div className="developer-container">
