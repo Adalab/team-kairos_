@@ -71,8 +71,20 @@ class App extends React.Component {
     const idUser = event.currentTarget.getAttribute('data-userid');
     this.setState(prevState => {
       const newDevAsignation = [...prevState.devAsignation];
+      const { code,description,task,ambassador,sendChecked,dataChecked } = this.state;
       const index = newDevAsignation.findIndex((user) => user.id === idUser);
       newDevAsignation[index].steps[id] = true;
+      if(id==='operations'){
+        newDevAsignation[index].code = code;
+        newDevAsignation[index].description = description;
+        newDevAsignation[index].task = task;
+      } else if (id==='talent') {
+        newDevAsignation[index].ambassador = ambassador;
+      } else if (id === 'ambassador') {
+        newDevAsignation[index].sendChecked = sendChecked;
+      } else if (id === 'headend') {
+        newDevAsignation[index].dataChecked = dataChecked;
+      }  
       return {
         devAsignation: newDevAsignation
       }
