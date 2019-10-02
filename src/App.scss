@@ -24,3 +24,18 @@
 .hidden {
   display:none;
 }
+
+.info{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  text-transform:capitalize;
+  width:15px;
+  height:15px;
+  margin: 5px;
+  padding:3px;
+  color:#FF7900;
+  border: 2px solid #FF7900;
+  border-radius:50%;
+  background-color:#F2F2F2;
+}
