@@ -45,14 +45,13 @@ class App extends React.Component {
   }
 
   getUserData(event) {
-    
     const value = event.currentTarget.value;
-    console.log(value);
     const id = event.currentTarget.id;
     this.setState({ [id]: value });
   }
 
   changeSteps(event) {
+    event.preventDefault();
     const id = event.currentTarget.id;
     this.setState(prevState => {
       const newSteps = { ...prevState.steps };
@@ -64,10 +63,9 @@ class App extends React.Component {
   }
 
   createProject(event) {
-    const id = event.currentTarget.id;
+    event.preventDefault();
+    this.changeSteps(event);
     this.setState(prevState => {
-      const newSteps = { ...prevState.steps };
-
       const newDevAsignation = [...prevState.devAsignation];
       const {developer,emailDev,client,project,rate,date} = this.state;
       newDevAsignation.push({
@@ -78,10 +76,7 @@ class App extends React.Component {
         rate: rate,
         date: date,
       });
-
-      newSteps[id] = true;
       return {
-        steps: newSteps,
         devAsignation: newDevAsignation
       }
     })
@@ -128,6 +123,8 @@ class App extends React.Component {
               rol={rol}
               createProject = {this.createProject} 
               getUserData={this.getUserData}
+              changeSteps={this.changeSteps}
+              steps={steps}
               />              
             );
           }} />
@@ -138,8 +135,9 @@ class App extends React.Component {
                 <Form
                   rol={rol}
                   getUserData={this.getUserData}
-                  changeSteps={this.changeSteps}
-                  steps = {steps} />
+                  steps = {steps}
+                  createProject={this.createProject}
+                  changeSteps={this.changeSteps}  />
               );
             }} />
         </Switch>

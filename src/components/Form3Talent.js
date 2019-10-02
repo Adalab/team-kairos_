@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 const Form3Talent = props => {
   const { rol, getUserData, changeSteps, steps} = props;
   return (
-    <fieldset>
+    <form onSubmit={changeSteps} id="talent">
       <label htmlFor="ambassador">Embajador</label>
-      <input type="text" id="ambassador" name="ambassador" disabled={!(rol==='talent')&&'disabled'} onChange={getUserData}/>
-      {(rol === 'talent') && <button onClick={changeSteps} id="talent" type="button" disabled= {(steps.talent)}>Confirmar</button>}
-      
-  </fieldset>
+      <input type="text" id="ambassador" name="ambassador" disabled={!(rol==='talent')&&'disabled'} onChange={getUserData} required/>
+      {(rol === 'talent') && <input type="submit" disabled= {(steps.talent)}  value="Confirmar"/>}
+  </form>
   );
 
 }

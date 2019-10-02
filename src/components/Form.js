@@ -11,10 +11,11 @@ const Form = props => {
   const {rol, getUserData, changeSteps, steps} = props;
   return (
     <div className="form__container">
-     <form action="/signup" method="post">
+     <section>
       <Form1NewProject 
         rol={rol}
         getUserData={getUserData}
+        steps={steps}
       />
       <Form2Operations 
         rol={rol}
@@ -40,7 +41,7 @@ const Form = props => {
       changeSteps={changeSteps} 
       steps={steps} 
       />     
-     </form>
+     </section>
       <div className="developer-container">
         <Link to="/developerlist"><button className="developer-button">Volver</button></Link>
       </div>

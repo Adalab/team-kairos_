@@ -5,19 +5,23 @@ import Form1NewProject from './Form1NewProject';
 import '../styles/NewProcess.scss';
 
 const NewProcess = props => {
-  const {createProject,rol,getUserData} = props;
+  const {createProject,rol,getUserData,steps} = props;
   return (
     <main className="main__new-process">
-      <form action="">
-        <Form1NewProject rol={rol} getUserData={getUserData}/>
+        <Form1NewProject 
+        rol={rol} 
+        getUserData={getUserData} 
+        createProject={createProject}
+        steps={steps}/>
         <div className="new-process__button-container">
-          <Link to="/developerlist"><button className="create__button" type="submit" id="headfirst" onClick={createProject}>Confirmar</button></Link>
-        </div>
-      </form>
+          <Link to="/developerlist">Volver</Link>
+      </div>
     </main>
   );
 }
 NewProcess.propTypes = {
+  steps: PropTypes.object.isRequired,
+  getUserData: PropTypes.func.isRequired,
   createProject: PropTypes.func.isRequired,
   rol: PropTypes.string.isRequired
 }

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 const Form4Ambassador = props => {
   const { rol, getUserData, changeSteps, steps } = props;
   return (
-    <fieldset>
+    <form onSubmit={changeSteps} id="ambassador">
     <label htmlFor="sendChecked">Enviar mail a empleado</label>
-    <input type="checkbox" id="sendChecked" name="sendChecked" disabled={!(rol==='ambassador')&&'disabled'} onChange={getUserData}/>
-    {(rol === 'ambassador') && <button onClick={changeSteps} id="ambassador" type="button"   disabled= {(steps.ambassador)} >Confirmar</button>}
+    <input type="checkbox" id="sendChecked" name="sendChecked" disabled={!(rol==='ambassador')&&'disabled'} onChange={getUserData} required/>
+    {(rol === 'ambassador') && <input  type="submit"   disabled= {(steps.ambassador)} value="Confirmar"/>}
 
-  </fieldset>
+  </form>
   );
 
 }

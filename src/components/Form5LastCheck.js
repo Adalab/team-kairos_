@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 const Form5LastCheck = props => {
   const { rol, getUserData, changeSteps, steps } = props;
   return (
-    <fieldset>
+    <form onSubmit={changeSteps} id="headend">
       <label htmlFor="dataChecked">Recepción datos</label>
-      <input type="checkbox" id="dataChecked" name="dataChecked" disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
-      {(rol === 'head') && <button onClick={changeSteps} id="headend" type="button" disabled= {(steps.headend)} >Confirmar</button>}
-
-  </fieldset>
+      <input type="checkbox" id="dataChecked" name="dataChecked" disabled={!(rol === 'head') && 'disabled'} onChange={getUserData} required/>
+      {(rol === 'head') && <input  type="submit" disabled= {(steps.headend)} value="Confirmar"/>}
+  </form>
   );
 }
 
