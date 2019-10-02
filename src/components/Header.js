@@ -11,6 +11,7 @@ const Header = props => {
       <div className="header__logo">
         <img src="https://www.kairosds.com/wp-content/uploads/2016/05/logo-general.png" alt="logo-kairos" className="header__img" />
       </div>
+      
       <div className="header__logo-user">
         <p className="user">{(logged)? email : `user`}</p>
         <i className="fas fa-user-alt"></i>

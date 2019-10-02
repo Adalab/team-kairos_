@@ -1,11 +1,13 @@
 @import './variables.scss';
 
 .header {
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center; 
     padding: 20px;
     background-color: $brand-03;
+    border-bottom: 3px solid $text-00;
 }
 
 .header__logo-user {
