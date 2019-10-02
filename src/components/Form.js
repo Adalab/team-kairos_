@@ -8,7 +8,7 @@ import Form3Talent from './Form3Talent';
 import Form5LastCheck from './Form5LastCheck';
 
 const Form = props => {
-  const { rol, getUserData, changeSteps, routerProps, devAsignation } = props;
+  const { rol, getUserData, changeSteps, routerProps, devAsignation, codeState, descriptionState,taskState, ambassadorState, sendCheckedState, dataCheckedState  } = props;
   const asignationId = routerProps.match.params.asignationId;
 
   const process = devAsignation.filter(item => item.id === asignationId);
@@ -40,6 +40,9 @@ const Form = props => {
         description={description}
         task={task}
         id={id}
+        codeState={codeState}
+        descriptionState={descriptionState}
+        taskState={taskState}
         />  
       <Form3Talent 
         rol={rol}
@@ -49,6 +52,7 @@ const Form = props => {
         
         ambassador={ambassador}
         id={id}
+        ambassadorState={ambassadorState}
         />
       <Form4Ambassador 
         rol={rol}
@@ -81,6 +85,12 @@ Form.propTypes = {
   rol: PropTypes.string.isRequired,
   getUserData: PropTypes.func.isRequired,
   changeSteps: PropTypes.func.isRequired,
+  codeState: PropTypes.string.isRequired,
+  descriptionState: PropTypes.string.isRequired,
+  taskState: PropTypes.string.isRequired,
+  ambassadorState: PropTypes.string.isRequired,
+  sendCheckedState: PropTypes.bool.isRequired,
+  dataCheckedState: PropTypes.bool.isRequired
 }
 
 export default Form; 

@@ -28,8 +28,8 @@ class App extends React.Component {
       description: '',
       task: '',
       ambassador: '',
-      sendChecked: '',
-      dataChecked: '',
+      sendChecked: false,
+      dataChecked: false,
       devAsignation: devAsignation,
 
     };
@@ -99,7 +99,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { email, devAsignation, rol, logged } = this.state;
+    const { email, devAsignation, rol, logged, code, description, task, ambassador, sendChecked, dataChecked } = this.state;
     return (
       <div className="app">
         <Header
@@ -151,7 +151,14 @@ class App extends React.Component {
                   getUserData={this.getUserData}
                   
                   createProject={this.createProject}
-                  changeSteps={this.changeSteps}  />
+                  changeSteps={this.changeSteps}
+                  codeState={code}
+                  descriptionState={description}
+                  taskState={task}
+                  ambassadorState={ambassador}
+                  sendCheckedState={sendChecked}
+                  dataCheckedState={dataChecked}
+                    />
               );
             }} />
 
