@@ -12,7 +12,9 @@ const Form4Ambassador = props => {
     disabled={(steps.ambassador ||!(rol === 'ambassador'))}
     onChange={getUserData} 
     value={sendChecked} required/>
-    {(rol === 'ambassador') && <input  type="submit"   disabled= { !steps.talent  ||(steps.ambassador)} value="Confirmar"/>}
+    {(rol === 'ambassador') && <input  type="submit"   
+    disabled= {!steps.talent  || steps.ambassador} 
+    value="Confirmar"/>}
   </form>
   );
 }
