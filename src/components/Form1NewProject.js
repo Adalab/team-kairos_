@@ -17,9 +17,9 @@ const Form1NewProject = props => {
       <input type="text" id="rate" name="rate" className={!((rol === 'head') || (rol === 'operations')) ? 'hidden': ''} disabled={!(rol === 'head') && 'disabled'} onChange={getUserData} value={rate} required/>
       <label htmlFor="date">Fecha de incorporación</label>
       <input type="text" id="date" name="date" disabled={!(rol === 'head') && 'disabled'} onChange={getUserData} value={date} required/>
-      <input className="create__button" type="submit" value="Confirmar" 
+      {!steps.headfirst && <input className="create__button" type="submit" value="Confirmar" 
        disabled={(steps.headfirst)}
-      />
+      />}
     </form>
   );
 
