@@ -5,7 +5,7 @@ import Form1NewProject from './Form1NewProject';
 import '../styles/NewProcess.scss';
 
 const NewProcess = props => {
-  const {createProject,rol,getUserData,steps} = props;
+  const {createProject,rol,getUserData,steps,resetStep} = props;
   // const steps = {
   //   headfirst: false
   // }
@@ -18,7 +18,7 @@ const NewProcess = props => {
         createProject={createProject}
         />
         <div className="new-process__button-container">
-          <Link to="/developerlist">Volver</Link>
+          <Link to="/developerlist" onClick={resetStep}>Ir al listado</Link>
       </div>
     </main>
   );
@@ -26,6 +26,7 @@ const NewProcess = props => {
 NewProcess.propTypes = {
   getUserData: PropTypes.func.isRequired,
   createProject: PropTypes.func.isRequired,
-  rol: PropTypes.string.isRequired
+  rol: PropTypes.string.isRequired,
+  resetStep: PropTypes.func.isRequired,
 }
 export default NewProcess;

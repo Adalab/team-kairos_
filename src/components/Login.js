@@ -1,23 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/Login.scss';
-import { Link } from 'react-router-dom';
-
 
 const Login = props => {
 
-  const { email, getUserData, login } = props;
+  const { email, getUserData, login, transitionToMain } = props;
+
 
   return (
     <main className="main__login">
-      <form>
+      <form onSubmit={transitionToMain}>
         <div className="login__email-container">
           <label htmlFor="email">Introduce tu email</label>
-          <input className="email" type="text" id="email" name="email" onChange={getUserData} value={email} />
+          <input className="email" type="text" id="email" name="email" onChange={getUserData} value={email} required />
         </div>
         <div className="login__rol-container">
           <label htmlFor="rol"></label>
-          <select id="rol" name="rol" onChange={getUserData}>
+          <select id="rol" name="rol" onChange={getUserData} required >
             <option value="">Rol</option>
             <option value="head">head</option>
             <option value="operations">operaciones</option>
@@ -26,7 +25,7 @@ const Login = props => {
           </select>
         </div>
         <div className="login__button-container">
-          <Link to="/developerlist"><button className="login__button" onClick={login} type="submit">Entrar</button></Link>
+         <input  className="login__button" onClick={login} type="submit"  value="Entrar"/>
         </div>
       </form>
 
@@ -35,6 +34,7 @@ const Login = props => {
 };
 
 Login.propTypes = {
+  transitionToMain: PropTypes.func.isRequired,
   login: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
   getUserData: PropTypes.func.isRequired

@@ -8,7 +8,7 @@ import DevelopersList from './components/DevelopersList';
 import NewProcess from './components/NewProcess';
 //import Form from './components/Form';
 import { devAsignation } from './components/Data';
-
+import { withRouter } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -38,6 +38,8 @@ class App extends React.Component {
     this.changeSteps = this.changeSteps.bind(this);
     this.createProject = this.createProject.bind(this);
     this.login = this.login.bind(this);
+    this.resetStep = this.resetStep.bind(this);
+    this.transitionToMain= this.transitionToMain.bind(this);
   }
 
   getUserData(event) {
@@ -130,8 +132,15 @@ class App extends React.Component {
       }
     })
   }
+  transitionToMain(event){
+    event.preventDefault();
+    this.props.history.push("/developerlist");
+  }
+  resetStep(){
+    this.setState({steps: {headfirst : false}})
+  }
 
-  login(event) {
+  login() {
     this.setState({ logged: true })
   }
 
@@ -152,6 +161,7 @@ class App extends React.Component {
                   login={this.login}
                   email={email}
                   getUserData={this.getUserData}
+                  transitionToMain={this.transitionToMain}
                 />
               );
             }} />
@@ -174,6 +184,7 @@ class App extends React.Component {
                 getUserData={this.getUserData}
                 changeSteps={this.changeSteps}
                 steps ={steps}
+                resetStep={this.resetStep}
 
               />
             );
@@ -206,4 +217,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);
