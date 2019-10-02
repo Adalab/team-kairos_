@@ -6,6 +6,7 @@ import Form2Operations from './Form2Operations';
 import Form4Ambassador from './Form4Ambassador';
 import Form3Talent from './Form3Talent';
 import Form5LastCheck from './Form5LastCheck';
+import '../styles/Form.scss';
 
 const Form = props => {
   const { rol, getUserData, changeSteps, routerProps, devAsignation, codeState, descriptionState, taskState, ambassadorState, sendCheckedState, dataCheckedState } = props;
@@ -19,8 +20,9 @@ const Form = props => {
     <div className="form__container">
 
       <section className="diagram">
-        <p>Pendiente de aprobación:</p>
-        <div className="info-container">
+        
+        <div className="info-container-zoom">
+          <p className="info-text">Pendiente de aprobación:</p>
           {!steps.operations && <div className="info">o</div>}
           {!steps.talent && <div className="info">{!steps.talent ? 't' : ''}</div>}
           {!steps.ambassador && <div className="info">a</div>}
