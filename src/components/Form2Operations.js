@@ -15,8 +15,8 @@ const Form2Operations = props => {
           name="code"
           disabled={(steps.operations || !(rol === 'operations')) && 'disabled'}
           onChange={getUserData}
-          value={ code || codeState} required 
-          className="inputs-form"/>
+          value={code || codeState} required
+          className="inputs-form" />
       </div>
 
       <div className="input-container">
@@ -27,8 +27,8 @@ const Form2Operations = props => {
           name="description"
           disabled={(steps.operations || !(rol === 'operations')) && 'disabled'}
           onChange={getUserData}
-          value={description || descriptionState} required 
-          className="inputs-form"/>
+          value={description || descriptionState} required
+          className="inputs-form" />
       </div>
 
       <div className="input-container">
@@ -38,16 +38,15 @@ const Form2Operations = props => {
           name="task"
           disabled={(steps.operations || !(rol === 'operations')) && 'disabled'}
           onChange={getUserData}
-          value={task || taskState} required 
-          className="inputs-form"/>
+          value={task || taskState} required
+          className="inputs-form" />
       </div>
 
-      {(rol === 'operations') &&
-        <input type="submit" value="Confirmar" disabled={(steps.operations)} className="btn"/>}
+      {(rol === 'operations') &&  <input type="submit" value="Confirmar" disabled={(steps.operations)} className="btn" />}
     </form>
   );
-
 }
+
 Form2Operations.propTypes = {
   steps: PropTypes.object.isRequired,
   rol: PropTypes.string.isRequired,

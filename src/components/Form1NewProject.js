@@ -5,6 +5,7 @@ const Form1NewProject = props => {
   const { developer, emailDev, client, project, rate, date, rol, getUserData, createProject, steps } = props;
   return (
     <form className="form-box" onSubmit={createProject} id="headfirst">
+
       <div className="input-container">
         <label htmlFor="developer">Nombre completo</label>
         <input type="text"
@@ -13,8 +14,8 @@ const Form1NewProject = props => {
           disabled={!(rol === 'head') && 'disabled'}
           onChange={getUserData}
           value={developer}
-          required 
-          className="inputs-form"/>
+          required
+          className="inputs-form" />
       </div>
 
       <div className="input-container">
@@ -26,8 +27,8 @@ const Form1NewProject = props => {
           disabled={!(rol === 'head') && 'disabled'}
           onChange={getUserData}
           value={emailDev}
-          required 
-          className="inputs-form"/>
+          required
+          className="inputs-form" />
       </div>
 
       <div className="input-container">
@@ -39,8 +40,8 @@ const Form1NewProject = props => {
           disabled={!(rol === 'head') && 'disabled'}
           onChange={getUserData}
           value={client}
-          required 
-          className="inputs-form"/>
+          required
+          className="inputs-form" />
       </div>
 
       <div className="input-container">
@@ -52,8 +53,8 @@ const Form1NewProject = props => {
           disabled={!(rol === 'head') && 'disabled'}
           onChange={getUserData}
           value={project}
-          required 
-          className="inputs-form"/>
+          required
+          className="inputs-form" />
       </div>
 
       <div className="input-container">
@@ -67,7 +68,7 @@ const Form1NewProject = props => {
           onChange={getUserData}
           value={rate}
           required
-          />
+        />
       </div>
 
       <div className="input-container">
@@ -80,15 +81,16 @@ const Form1NewProject = props => {
           disabled={!(rol === 'head') && 'disabled'}
           onChange={getUserData}
           value={date}
-          required 
-          className="inputs-form"/>
+          required
+          className="inputs-form" />
       </div>
+
       {rol === 'head' && <input className="create__button btn" type="submit" value="Confirmar"
         disabled={(steps.headfirst)} />}
     </form>
   );
-
 }
+
 Form1NewProject.propTypes = {
   steps: PropTypes.object,
   rol: PropTypes.string.isRequired,

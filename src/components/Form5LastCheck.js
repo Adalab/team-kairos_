@@ -18,11 +18,7 @@ const Form5LastCheck = props => {
           required
         />
       </div>
-
-
-      {(rol === 'head') && !steps.headend && <input type="submit"
-        disabled={!steps.talent || !steps.ambassador || !steps.operations || steps.headend}
-        value="Confirmar" className="btn" />}
+      {(rol === 'head') && !steps.headend && <input type="submit" disabled={!steps.talent || !steps.ambassador || !steps.operations || steps.headend} value="Confirmar" className="btn" />}
     </form>
   );
 }
@@ -32,11 +28,6 @@ Form5LastCheck.propTypes = {
   rol: PropTypes.string.isRequired,
   getUserData: PropTypes.func.isRequired,
   changeSteps: PropTypes.func.isRequired,
-}
-
-Form5LastCheck.propTypes = {
-  rol: PropTypes.string.isRequired,
-  getUserData: PropTypes.func.isRequired
 }
 
 export default Form5LastCheck;

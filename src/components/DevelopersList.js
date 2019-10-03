@@ -8,31 +8,29 @@ const DevelopersList = (props) => {
   return (
     <main className="main__developers">
       <h2 className="developerlist__title">Asignación de procesos</h2>
-
-        {(rol === 'head') && <Link to="/newprocess"> <button className="create__developer-button btn">Iniciar proceso</button></Link>}
+      {(rol === 'head') && <Link to="/newprocess"> <button className="create__developer-button btn">Iniciar proceso</button></Link>}
       <ul className="developers__list">
         {devAsignation.map((dev, index) =>
-          <li className="developers__item" key={index}>           
+          <li className="developers__item" key={index}>
             <Link className="developer__link" to={`/form/${dev.id}`}>
               <div className="developer__card-container">
                 <h3 className="developer__name">{dev.developer}</h3>
                 <p className="developer__project"> proyecto: {dev.project}</p>
                 <p className="developer__client">cliente: {dev.client}</p>
                 <p className="developer__date">fecha: {dev.date}</p>
-                <p>Pendiente de aprobación:</p> 
-                <div className="info-container">                 
+                <p>Pendiente de aprobación:</p>
+                <div className="info-container">
                   {!dev.steps.operations && <div className="info">o</div>}
                   {!dev.steps.talent && <div className="info">{!dev.steps.talent ? 't' : ''}</div>}
                   {!dev.steps.ambassador && <div className="info">e</div>}
                   {!dev.steps.headend && <div className="info">h</div>}
-                  {dev.steps.headend && <p className = "info-end">asignación cerrada</p>}
+                  {dev.steps.headend && <p className="info-end">asignación cerrada</p>}
                 </div>
               </div>
             </Link>
           </li>
         )}
       </ul>
-
     </main>
   );
 }

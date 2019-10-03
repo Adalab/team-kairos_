@@ -17,10 +17,7 @@ const Form4Ambassador = props => {
           value={sendCheckedState} required
         />
       </div>
-
-      {(rol === 'ambassador') && <input type="submit"
-        disabled={!steps.talent || steps.ambassador}
-        value="Confirmar" className="btn" />}
+      {(rol === 'ambassador') && <input type="submit" disabled={!steps.talent || steps.ambassador} value="Confirmar" className="btn" />}
     </form>
   );
 }
@@ -30,11 +27,6 @@ Form4Ambassador.propTypes = {
   rol: PropTypes.string.isRequired,
   getUserData: PropTypes.func.isRequired,
   changeSteps: PropTypes.func.isRequired,
-}
-
-Form4Ambassador.propTypes = {
-  rol: PropTypes.string.isRequired,
-  getUserData: PropTypes.func.isRequired
 }
 
 export default Form4Ambassador;

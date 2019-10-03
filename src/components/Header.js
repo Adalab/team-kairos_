@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import '../styles/Header.scss';
 
 const Header = props => {
-
   const { email, logged } = props;
-
   return (
     <header className="header">
       <div>
@@ -17,7 +14,6 @@ const Header = props => {
           </div>
         </a>
       </div>
-
       <div className="header__logo-user">
         <p className="user">{(logged) ? email : `user`}</p>
         <i className="fas fa-user-alt"></i>
@@ -25,6 +21,7 @@ const Header = props => {
     </header>
   );
 };
+
 Header.propTypes = {
   logged: PropTypes.bool.isRequired,
   email: PropTypes.string.isRequired,

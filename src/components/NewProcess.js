@@ -5,10 +5,7 @@ import Form1NewProject from './Form1NewProject';
 import '../styles/NewProcess.scss';
 
 const NewProcess = props => {
-  const {createProject,rol,getUserData,steps,resetStep} = props;
-  // const steps = {
-  //   headfirst: false
-  // }
+  const {createProject, rol, getUserData, steps, resetStep} = props;
   return (
     <main className="main__new-process">
         <Form1NewProject
@@ -23,10 +20,12 @@ const NewProcess = props => {
     </main>
   );
 }
+
 NewProcess.propTypes = {
   getUserData: PropTypes.func.isRequired,
   createProject: PropTypes.func.isRequired,
   rol: PropTypes.string.isRequired,
   resetStep: PropTypes.func.isRequired,
 }
+
 export default NewProcess;

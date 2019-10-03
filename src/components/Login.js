@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import '../styles/Login.scss';
 
 const Login = props => {
-
   const { email, getUserData, login, transitionToMain } = props;
-
-
   return (
     <main className="main__login">
       <form className="main__login-container" onSubmit={transitionToMain}>
@@ -28,7 +25,6 @@ const Login = props => {
          <input  className="btn" onClick={login} type="submit"  value="Entrar"/>
         </div>
       </form>
-
     </main>
   );
 };
