@@ -21,7 +21,7 @@ const DevelopersList = (props) => {
                 <div className="info-container">                 
                   {!dev.steps.operations && <div className="info">o</div>}
                   {!dev.steps.talent && <div className="info">{!dev.steps.talent ? 't' : ''}</div>}
-                  {!dev.steps.ambassador && <div className="info">a</div>}
+                  {!dev.steps.ambassador && <div className="info">e</div>}
                   {!dev.steps.headend && <div className="info">h</div>}
                   {dev.steps.headend && <p className = "info-end">asignación cerrada</p>}
                 </div>
