@@ -87,7 +87,7 @@ class App extends React.Component {
         newDevAsignation[index].sendChecked = sendChecked;
       } else if (id === 'headend') {
         newDevAsignation[index].dataChecked = dataChecked;
-      }  
+      } 
       return {
         devAsignation: newDevAsignation,
         code: '',
