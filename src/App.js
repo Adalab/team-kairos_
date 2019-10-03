@@ -6,16 +6,23 @@ import './App.scss';
 import Login from './components/Login';
 import DevelopersList from './components/DevelopersList';
 import NewProcess from './components/NewProcess';
-import {getDevelopers} from './services/getDevelopers';
-//import Form from './components/Form';
-import { devAsignation } from './components/Data';
+import { getDevelopers } from './services/getDevelopers';
+import firebase from 'firebase';
 import { withRouter } from 'react-router-dom';
+
+var config = {
+  apiKey: 'AIzaSyCttKCcGy58xs60l9mHQ__OLRPjnDKvsBw',
+  authDomain: 'kandidates-146710',
+  databaseURL: 'http://kandidates-146710.firebaseio.com/',
+}
+firebase.initializeApp(config)
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      steps:{ headfirst : false},
+      steps: { headfirst: false },
       logged: false,
       email: '',
       rol: '',
@@ -32,28 +39,28 @@ class App extends React.Component {
       ambassador: '',
       sendChecked: false,
       dataChecked: false,
-      devAsignation: devAsignation,
-      api: ''
+      devAsignation: [],
     };
     this.getUserData = this.getUserData.bind(this);
     this.changeSteps = this.changeSteps.bind(this);
     this.createProject = this.createProject.bind(this);
     this.login = this.login.bind(this);
     this.resetStep = this.resetStep.bind(this);
-    this.transitionToMain= this.transitionToMain.bind(this);
-    this.getKandidates = this.getKandidates.bind(this);
+    this.transitionToMain = this.transitionToMain.bind(this);
+    this.writeUserData = this.writeUserData.bind(this);
   }
 
   componentDidMount() {
-    this.getKandidates();
+    this.writeUserData();
   }
-
-  getKandidates() {
-    getDevelopers().then(data => 
+  writeUserData() {
+    const database = firebase.database()
+    database.ref('/devAsignation').once('value').then(snapshot => {
+      const newApi = snapshot.val();
       this.setState({
-        api: data
+        devAsignation: newApi
       })
-    )
+    });
   }
 
   getUserData(event) {
@@ -63,11 +70,10 @@ class App extends React.Component {
 
       this.setState((prevState) => {
         const newSendChecked = prevState.sendChecked;
-        console.log(newSendChecked);
         return {
           sendChecked: !newSendChecked
         }
-      } )
+      })
 
     } else if (id === 'dataChecked') {
       this.setState((prevState) => {
@@ -76,7 +82,7 @@ class App extends React.Component {
 
           dataChecked: !newDataChecked
         }
-      } )
+      })
     } else {
       this.setState({ [id]: value });
     }
@@ -91,17 +97,17 @@ class App extends React.Component {
       const { code,description,task,ambassador,sendChecked,dataChecked } = this.state;
       const index = newDevAsignation.findIndex((user) => user.id === idUser);
       newDevAsignation[index].steps[id] = true;
-      if(id==='operations'){
+      if (id === 'operations') {
         newDevAsignation[index].code = code;
         newDevAsignation[index].description = description;
         newDevAsignation[index].task = task;
-      } else if (id==='talent') {
+      } else if (id === 'talent') {
         newDevAsignation[index].ambassador = ambassador;
       } else if (id === 'ambassador') {
         newDevAsignation[index].sendChecked = sendChecked;
       } else if (id === 'headend') {
         newDevAsignation[index].dataChecked = dataChecked;
-      }  
+      }
       return {
         devAsignation: newDevAsignation
       }
@@ -139,7 +145,6 @@ class App extends React.Component {
       });
       const newStepState = {...prevState.steps};
       newStepState.headfirst = true;
-      //console.log(newStepState);
       return {
         steps : newStepState,
         devAsignation: newDevAsignation
