@@ -1,13 +1,19 @@
 @import './variables.scss';
 
 .header {
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center; 
     padding: 20px;
-    background-color: $brand-03;
+    background-color: $inverse-01;
+    border-bottom: 3px solid $text-00;
 }
-
+.titlepage{
+    height: 1px;
+    overflow: hidden;
+    margin: 0px;
+}
 .header__logo-user {
     display: flex;
     justify-content: space-between;
@@ -16,4 +22,12 @@
 .user {
     margin: 0;
     padding-right: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-right: 10px;
+    color:$text-01;
+}
+.header__logo-user{
+    font-size: 24px;
+    color:$text-01;
 }

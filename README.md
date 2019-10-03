@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Flujo de asignación 
 
-In the project directory, you can run:
+Esta aplicación asigna developers a proyectos en un flujo en el que intervienen los diferentes departamentos de la empresa Kairós DS: Head, Operaciones, Talento y Embajada, generando un total de cinco fases. 
+Algunas de éstas fases pueden cumplimentarse independientemente de las anteriores y otras necesitan que esté terminada una fase previa. 
+Una vez todos los departamentos han rellenado los campos que le corresponden, el Head cierra el flujo en la quinta fase mediante una confirmación final, quedado el develoeper asignado a un proyecto.  
 
-### `npm start`
+## Funcionamiento
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-  Loguearse indicando email y departamento. 
+-  Accederemos al listado de asignaciones existentes, tanto aquellas que se encuentran en proceso como las ya finalizadas. 
+-  El rol de Head tendrá la posibilidad exclusiva de iniciar nuevas asignaciones de proyectos. 
+-  En el listado de asignaciones, sólo serán editables las que correspondan al usuario logueado y a la fase que le corresponde, avanzando el flujo a medida que éstas se rellenan. 
+-  Cada proyecto tendrá asociado un diagrama en el que se muestran mediante las iniciales de los diferentes departamentos quienes deben rellenar aún los campos que les corresponden. 
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Guía de inicio rápido
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para trabajar con este repositorio, te recomendamos instalar previamente npm install y asegurarte de contar con las dependencias de node modules.
 
-### `npm run build`
+Para el desarrollo del proyecto hemos utilizado:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+HTML
+SCSS
+JAVASCRIPT
+REACT
+FIREBASE
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+La estructura de carpetas open_file_folder tiene esta forma:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+team-kairos
 
-### `npm run eject`
+├── .gitignore
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+├── package.json
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+├── node_modules
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+│ ├── react
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+│ └── react-dom
 
-## Learn More
+├── public
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+│ └── index.html
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+└── src
 
-### Code Splitting
+├── images
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+├── scss
 
-### Analyzing the Bundle Size
+├── services
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+├── components
 
-### Making a Progressive Web App
+└── index.js
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Esta aplicación está programada con JavaScript y la librería de React.

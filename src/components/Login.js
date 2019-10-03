@@ -3,21 +3,18 @@ import PropTypes from 'prop-types';
 import '../styles/Login.scss';
 
 const Login = props => {
-
   const { email, getUserData, login, transitionToMain } = props;
-
-
   return (
     <main className="main__login">
-      <form onSubmit={transitionToMain}>
+      <form className="main__login-container" onSubmit={transitionToMain}>
         <div className="login__email-container">
-          <label htmlFor="email">Introduce tu email</label>
+          <label className="label__mail" htmlFor="email">Introduce tu email</label>
           <input className="email" type="text" id="email" name="email" onChange={getUserData} value={email} required />
         </div>
         <div className="login__rol-container">
           <label htmlFor="rol"></label>
-          <select id="rol" name="rol" onChange={getUserData} required >
-            <option value="">Rol</option>
+          <select className="login__select" id="rol" name="rol" onChange={getUserData} required >
+            <option value="">rol</option>
             <option value="head">head</option>
             <option value="operations">operaciones</option>
             <option value="talent">talento</option>
@@ -25,10 +22,9 @@ const Login = props => {
           </select>
         </div>
         <div className="login__button-container">
-         <input  className="login__button" onClick={login} type="submit"  value="Entrar"/>
+         <input  className="btn" onClick={login} type="submit"  value="Entrar"/>
         </div>
       </form>
-
     </main>
   );
 };

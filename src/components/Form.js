@@ -11,22 +11,20 @@ import '../styles/Form.scss';
 const Form = props => {
   const { rol, getUserData, changeSteps, routerProps, devAsignation, codeState, descriptionState, taskState, ambassadorState, sendCheckedState, dataCheckedState } = props;
   const asignationId = routerProps.match.params.asignationId;
-
   const process = devAsignation.filter(item => item.id === asignationId);
-
-
-  const { developer, emailDev, client, project, rate, date, code, description, task, ambassador, sendChecked, dataChecked, id, steps } = process[0];
+  const { developer, emailDev, client, project, rate, date, code, description, task, ambassador, id, steps } = process[0];
   return (
     <div className="form__container">
-
       <section className="diagram">
         <div className="info-container-zoom">
           <p className="info-text">Pendiente de aprobación:</p>
-          {!steps.operations && <div className="info">o</div>}
-          {!steps.talent && <div className="info">{!steps.talent ? 't' : ''}</div>}
-          {!steps.ambassador && <div className="info">a</div>}
-          {!steps.headend && <div className="info">h</div>}
-          {steps.headend && <p className="info-end">asignación cerrada</p>}
+          <div className="statusbox">
+            {!steps.operations && <div className="info">o</div>}
+            {!steps.talent && <div className="info">{!steps.talent ? 't' : ''}</div>}
+            {!steps.ambassador && <div className="info">e</div>}
+            {!steps.headend && <div className="info">h</div>}
+            {steps.headend && <p className="info-end">asignación cerrada</p>}
+          </div>
         </div>
       </section>
 
@@ -35,7 +33,6 @@ const Form = props => {
           rol={rol}
           getUserData={getUserData}
           steps={steps}
-
           developer={developer}
           emailDev={emailDev}
           client={client}
@@ -48,7 +45,6 @@ const Form = props => {
           getUserData={getUserData}
           changeSteps={changeSteps}
           steps={steps}
-
           code={code}
           description={description}
           task={task}
@@ -62,7 +58,6 @@ const Form = props => {
           getUserData={getUserData}
           changeSteps={changeSteps}
           steps={steps}
-
           ambassador={ambassador}
           id={id}
           ambassadorState={ambassadorState}
@@ -72,8 +67,7 @@ const Form = props => {
           getUserData={getUserData}
           changeSteps={changeSteps}
           steps={steps}
-
-          sendChecked={sendCheckedState}
+          sendCheckedState={sendCheckedState}
           id={id}
         />
         <Form5LastCheck
@@ -81,16 +75,14 @@ const Form = props => {
           getUserData={getUserData}
           changeSteps={changeSteps}
           steps={steps}
-
-          dataChecked={dataCheckedState}
+          dataCheckedState={dataCheckedState}
           id={id}
         />
       </section>
       <div className="developer-container">
-        <Link to="/developerlist"><button className="developer-button">Volver</button></Link>
+        <Link to="/developerlist"><button className="developer-button btn">Volver</button></Link>
       </div>
     </div>
-
   );
 }
 
