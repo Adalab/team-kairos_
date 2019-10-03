@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Form5LastCheck = props => {
-  const { rol, getUserData, changeSteps, steps, dataChecked, id } = props;
+  const { rol, getUserData, changeSteps, steps, dataCheckedState, id } = props;
   return (
     <form className="form-box" onSubmit={changeSteps} id="headend" data-userid={id}>
       <label htmlFor="dataChecked">Recepción datos</label>
@@ -10,10 +10,10 @@ const Form5LastCheck = props => {
         type="checkbox"
         id="dataChecked"
         name="dataChecked"
-        checked={dataChecked}
+        checked={steps.headend ? true : dataCheckedState}
         disabled={!steps.talent || !steps.ambassador || !steps.operations || steps.headend || !(rol === 'head')}
         onChange={getUserData}
-        value={dataChecked}
+        value={dataCheckedState}
         required />
         {(rol === 'head') && !steps.headend && <input type="submit"
         disabled={!steps.talent || !steps.ambassador || !steps.operations || steps.headend}

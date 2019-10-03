@@ -14,7 +14,7 @@ const Form3Talent = props => {
           name="ambassador"
           disabled={(steps.talent || !(rol === 'talent')) && 'disabled'}
           onChange={getUserData}
-          value={ambassadorState || ambassador}
+          value={ambassador || ambassadorState}
           required />
       </div>
 
