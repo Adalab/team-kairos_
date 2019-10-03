@@ -22,11 +22,14 @@ const Form = props => {
       <section className="diagram">
         <div className="info-container-zoom">
           <p className="info-text">Pendiente de aprobación:</p>
+          <div className="statusbox">
           {!steps.operations && <div className="info">o</div>}
           {!steps.talent && <div className="info">{!steps.talent ? 't' : ''}</div>}
           {!steps.ambassador && <div className="info">e</div>}
           {!steps.headend && <div className="info">h</div>}
           {steps.headend && <p className="info-end">asignación cerrada</p>}
+          </div>
+         
         </div>
       </section>
 
@@ -88,7 +91,7 @@ const Form = props => {
         />
       </section>
       <div className="developer-container">
-        <Link to="/developerlist"><button className="developer-button">Volver</button></Link>
+        <Link to="/developerlist"><button className="developer-button btn">Volver</button></Link>
       </div>
     </div>
 

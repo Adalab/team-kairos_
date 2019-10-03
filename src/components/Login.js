@@ -25,7 +25,7 @@ const Login = props => {
           </select>
         </div>
         <div className="login__button-container">
-         <input  className="login__button" onClick={login} type="submit"  value="Entrar"/>
+         <input  className="btn" onClick={login} type="submit"  value="Entrar"/>
         </div>
       </form>
 

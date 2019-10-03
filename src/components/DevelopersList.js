@@ -7,7 +7,9 @@ const DevelopersList = (props) => {
   const { devAsignation, rol } = props;
   return (
     <main className="main__developers">
-        {(rol === 'head') && <Link to="/newprocess"> <button className="create__developer-button">Iniciar proceso</button></Link>}
+      <h2 className="developerlist__title">Asignación de procesos</h2>
+
+        {(rol === 'head') && <Link to="/newprocess"> <button className="create__developer-button btn">Iniciar proceso</button></Link>}
       <ul className="developers__list">
         {devAsignation.map((dev, index) =>
           <li className="developers__item" key={index}>           

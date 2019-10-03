@@ -35,17 +35,12 @@
 }
 .login__select {
   height: 30px;
-  width: 150px;
+  width: 250px;
   font-size: 16px;
 }
 .login__button-container {
+  display: flex;
+  justify-content: center;
   margin-top: 40px;
 }
-.login__button {
-  height: 50px;
-  width: 250px;
-  background-color: $brand-01;
-  color: $text-04;
-  font-size: 20px;
-  font-family: $font-quicksand;
-}
+

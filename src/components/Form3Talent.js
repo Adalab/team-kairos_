@@ -15,10 +15,11 @@ const Form3Talent = props => {
           disabled={(steps.talent || !(rol === 'talent')) && 'disabled'}
           onChange={getUserData}
           value={ambassador || ambassadorState}
-          required />
+          required 
+          className="inputs-form"/>
       </div>
 
-      {(rol === 'talent') && <input type="submit" disabled={(steps.talent)} value="Confirmar" />}
+      {(rol === 'talent') && <input type="submit" disabled={(steps.talent)} value="Confirmar" className="btn"/>}
     </form>
   );
 }
