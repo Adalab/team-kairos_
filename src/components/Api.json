@@ -1,0 +1,113 @@
+{"devAsignation": [
+    {
+      "developer": "juan",
+      "emailDev": "juan@gmail.com",
+      "client": "zara",
+      "project": "tienda",
+      "rate": "1000 euros",
+      "date": "10 mayo",
+      "id": "tiendajuan",
+      "code": "",
+      "description": "",
+      "task": "",
+      "ambassador": "",
+      "sendChecked": false,
+      "dataChecked": false,
+      "steps": {
+        "headfirst": true,
+        "operations": false,
+        "talent": false,
+        "ambassador": false,
+        "headend": false
+      }
+    },
+    {
+      "developer": "emilia",
+      "emailDev": "emilia@gmail.com",
+      "client": "mango",
+      "project": "tienda",
+      "rate": "1000 euros",
+      "date": "12 mayo",
+      "id": "tiendaemilia",
+      "code": "1234",
+      "description": "proyecto de maquetación",
+      "task": "5",
+      "ambassador": "",
+      "sendChecked": false,
+      "dataChecked": false,
+      "steps": {
+        "headfirst": true,
+        "operations": true,
+        "talent": false,
+        "ambassador": false,
+        "headend": false
+      }
+    },
+    {
+      "developer": "claudia",
+      "emailDev": "claudia@gmail.com",
+      "client": "carrefour",
+      "project": "tienda",
+      "rate": "1000 euros",
+      "date": "6 mayo",
+      "id": "tiendaclaudia",
+      "code": "4567",
+      "description": "refactorización con react",
+      "task": "7",
+      "ambassador": "maria emilia",
+      "sendChecked": false,
+      "dataChecked": false,
+      "steps": {
+        "headfirst": true,
+        "operations": true,
+        "talent": true,
+        "ambassador": false,
+        "headend": false
+      }
+    },
+    {
+      "developer": "paco",
+      "emailDev": "paco@gmail.com",
+      "client": "bbva",
+      "project": "banco",
+      "rate": "3000 euros",
+      "date": "15 mayo",
+      "id": "bancopaco",
+      "code": "7890",
+      "description": "react",
+      "task": "7",
+      "ambassador": "maria emilia",
+      "sendChecked": true,
+      "dataChecked": true,
+      "steps": {
+        "headfirst": true,
+        "operations": true,
+        "talent": true,
+        "ambassador": true,
+        "headend": true
+      }
+    },
+    {
+      "developer": "pepe",
+      "emailDev": "pepe@gmail.com",
+      "client": "bankia",
+      "project": "banco",
+      "rate": "7000 euros",
+      "date": "17 mayo",
+      "id": "bancopepe",
+      "code": "49874",
+      "description": "implementar javaScript en la aplicación web",
+      "task": "7",
+      "ambassador": "maria pepa dominguez",
+      "sendChecked": true,
+      "dataChecked": false,
+      "steps": {
+        "headfirst": true,
+        "operations": true,
+        "talent": true,
+        "ambassador": true,
+        "headend": false
+      }
+    }
+    ]
+  }

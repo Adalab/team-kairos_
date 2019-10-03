@@ -6,6 +6,7 @@ import './App.scss';
 import Login from './components/Login';
 import DevelopersList from './components/DevelopersList';
 import NewProcess from './components/NewProcess';
+import {getDevelopers} from './services/getDevelopers';
 //import Form from './components/Form';
 import { devAsignation } from './components/Data';
 import { withRouter } from 'react-router-dom';
@@ -32,7 +33,7 @@ class App extends React.Component {
       sendChecked: false,
       dataChecked: false,
       devAsignation: devAsignation,
-
+      api: ''
     };
     this.getUserData = this.getUserData.bind(this);
     this.changeSteps = this.changeSteps.bind(this);
@@ -40,6 +41,19 @@ class App extends React.Component {
     this.login = this.login.bind(this);
     this.resetStep = this.resetStep.bind(this);
     this.transitionToMain= this.transitionToMain.bind(this);
+    this.getKandidates = this.getKandidates.bind(this);
+  }
+
+  componentDidMount() {
+    this.getKandidates();
+  }
+
+  getKandidates() {
+    getDevelopers().then(data => 
+      this.setState({
+        api: data
+      })
+    )
   }
 
   getUserData(event) {
@@ -143,8 +157,8 @@ class App extends React.Component {
   login() {
     this.setState({ logged: true })
   }
-
   render() {
+    console.log(getDevelopers);
     const { email, devAsignation, rol, logged, code, description, task, ambassador, sendChecked, dataChecked, steps } = this.state;
     return (
       <div className="app">
