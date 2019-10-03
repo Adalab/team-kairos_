@@ -89,9 +89,16 @@ class App extends React.Component {
         newDevAsignation[index].dataChecked = dataChecked;
       }  
       return {
-        devAsignation: newDevAsignation
+        devAsignation: newDevAsignation,
+        code: '',
+        description: '',
+        task: '',
+        ambassador: '',
+        sendChecked: false,
+        dataChecked: false,
       }
     })
+
   }
 
   createProject(event) {
