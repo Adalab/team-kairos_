@@ -9,7 +9,11 @@
     background-color: $brand-03;
     border-bottom: 3px solid $text-00;
 }
-
+.titlepage{
+    height: 1px;
+    overflow: hidden;
+    margin: 0px;
+}
 .header__logo-user {
     display: flex;
     justify-content: space-between;
