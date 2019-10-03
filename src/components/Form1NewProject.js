@@ -2,29 +2,98 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Form1NewProject = props => {
-  const { rol, getUserData } = props;
+  const { developer, emailDev, client, project, rate, date, rol, getUserData, createProject, steps } = props;
   return (
-    <fieldset>
-      <label htmlFor="developer">Nombre y apellidos developer</label>
-      <input type="text" id="developer" name="developer" disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
-      <label htmlFor="emailDev">Email developer</label>
-      <input type="text" id="emailDev" name="emailDev" disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
-      <label htmlFor="client">Cliente</label>
-      <input type="text" id="client" name="client" disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
-      <label htmlFor="project">proyecto</label>
-      <input type="text" id="project" name="project" disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
-      <label htmlFor="rate">Tarifa</label>
-      <input type="text" id="rate" name="rate" className={!((rol === 'head') || (rol === 'operations')) && 'hidden'} disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
-      <label htmlFor="date">Fecha de incorporación</label>
-      <input type="text" id="date" name="date" disabled={!(rol === 'head') && 'disabled'} onChange={getUserData}/>
-    </fieldset>
+    <form className="form-box" onSubmit={createProject} id="headfirst">
+      <div className="input-container">
+        <label htmlFor="developer">Nombre completo</label>
+        <input type="text"
+          id="developer"
+          name="developer"
+          disabled={!(rol === 'head') && 'disabled'}
+          onChange={getUserData}
+          value={developer}
+          required 
+          className="inputs-form"/>
+      </div>
+
+      <div className="input-container">
+        <label htmlFor="emailDev">Email developer</label>
+        <input
+          type="text"
+          id="emailDev"
+          name="emailDev"
+          disabled={!(rol === 'head') && 'disabled'}
+          onChange={getUserData}
+          value={emailDev}
+          required 
+          className="inputs-form"/>
+      </div>
+
+      <div className="input-container">
+        <label htmlFor="client">Cliente</label>
+        <input
+          type="text"
+          id="client"
+          name="client"
+          disabled={!(rol === 'head') && 'disabled'}
+          onChange={getUserData}
+          value={client}
+          required 
+          className="inputs-form"/>
+      </div>
+
+      <div className="input-container">
+        <label htmlFor="project">proyecto</label>
+        <input
+          type="text"
+          id="project"
+          name="project"
+          disabled={!(rol === 'head') && 'disabled'}
+          onChange={getUserData}
+          value={project}
+          required 
+          className="inputs-form"/>
+      </div>
+
+      <div className="input-container">
+        <label className={!((rol === 'head') || (rol === 'operations')) ? 'hidden' : ''} htmlFor="rate">Tarifa</label>
+        <input
+          type="text"
+          id="rate"
+          name="rate"
+          className={!((rol === 'head') || (rol === 'operations')) ? 'hidden' : 'inputs-form'}
+          disabled={!(rol === 'head') && 'disabled'}
+          onChange={getUserData}
+          value={rate}
+          required
+          />
+      </div>
+
+      <div className="input-container">
+        <label htmlFor="date">Incorporación</label>
+        <input
+          placeholder="dd/mm/yyyy"
+          type="text"
+          id="date"
+          name="date"
+          disabled={!(rol === 'head') && 'disabled'}
+          onChange={getUserData}
+          value={date}
+          required 
+          className="inputs-form"/>
+      </div>
+      {rol === 'head' && <input className="create__button btn" type="submit" value="Confirmar"
+        disabled={(steps.headfirst)} />}
+    </form>
   );
 
 }
-
 Form1NewProject.propTypes = {
+  steps: PropTypes.object,
   rol: PropTypes.string.isRequired,
-  getUserData: PropTypes.func.isRequired
+  getUserData: PropTypes.func.isRequired,
+  createProject: PropTypes.func,
 }
 
 export default Form1NewProject;

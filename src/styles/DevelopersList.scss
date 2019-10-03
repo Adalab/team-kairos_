@@ -1,21 +1,65 @@
+@import './variables.scss';
+.developerlist__title{
+  text-align: center;
+  font-family: $font-quicksand;
+}
 .main__developers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  margin:30px;
+ 
+}
+.developer__link{
+  text-decoration:none;
+  color:inherit;
 }
 .developers__list {
+  padding:40px;
   list-style: none;
+  display:flex;
+  align-content:flex-start;  
+  flex-direction:row;
+  flex-wrap: wrap;
+  // align-items: center;
+  margin:0;
+  padding:0;
+  
 }
 .developers__item {
-  margin: 5px;
+  margin: 15px;
+  
 }
 .developer__card-container {
-  border: solid 1px black;
-  padding: 15px;
+  border: solid 2px #999999;
+  padding: 15px; 
+  height:300px; 
+  width:220px;
+  border-radius:5px;
 }
 .create__developer-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  // position: absolute;
+  // top: 20px;
+  // left: 20px;
+}
+
+.info{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  text-transform:capitalize; 
+  width:15px;
+  height:15px;
+  margin: 5px;
+  padding:3px;
+  color:#FF7900;
+  border: 2px solid #FF7900;
+  border-radius:50%;
+  background-color:#F2F2F2;
+}
+
+.info-container {
+  display:flex;
+}
+
+.info-end{
+  color:#FF7900;
+  font-weight: 700;
 }

@@ -1,29 +1,46 @@
-@import 'variables';
-
-.main__login{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+@import "variables";
+.main__login-container {
+  margin: 200px;
+  padding: 60px 60px;
+  border: 4px solid $brand-01;
+  border-radius: 16px;
 }
-
-
-.login__email-container{
-
+.main__login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-.login__rol-container{
-    margin-top: 30px;
+.login__email-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
+.label__mail {
+  font-size: 20px;
+  font-family: $font-quicksand;
+}
+.email {
+  height: 30px;
+  width: 250px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 15px 0 0;
+}
+.login__rol-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.login__select {
+  height: 30px;
+  width: 250px;
+  font-size: 16px;
+}
 .login__button-container {
-    margin-top: 30px;
-   
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
-.login__button {
-    height: 20px;
-    width: 110px;
-    background-color: $brand-01;
-    color:$text-04;
-}
+

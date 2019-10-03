@@ -1,11 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
+@import "./styles/variables.scss";
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -20,3 +13,25 @@
 .App-link {
   color: #09d3ac;
 }
+
+.hidden {
+  display: none;
+}
+.btn {
+  color: $text-04;
+  background-color: $brand-01;
+  text-transform: uppercase;
+  font-size: $txt-t-link;
+  border-radius: 5px;
+  padding: 10px 25px;
+  &:hover {
+    background-color: $AGILE;
+  }
+  &:focus {
+    border: 2px solid $ui-01;
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+

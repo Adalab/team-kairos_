@@ -1,100 +1,118 @@
 
 
-const users = [
-  {
-    email: 'head@kairos.com',
-    rol: 'head'
-  },
-  {
-    email: 'operaciones@kairos.com',
-    rol: 'operaciones'
-  },
-  {
-    email: 'talento@kairos.com',
-    rol: 'talento'
-  },
-  {
-    email: 'embajada@kairos.com',
-    rol: 'embajada'
-  }
-];
+
 
 const devAsignation = [
   {
-    developer: 'Juana Domínguez',
-    rate: 1000,
+    developer: 'juan',
+    emailDev: 'juan@gmaill',
     client: 'zara',
-    location: 'Calle leganitos',
-    job: 'maquetadora',
-    projectNumber: 5555,
-    code: 986539,
-    ambassador: 'luisa rodriguez',
-    sendChecked: true,
-    PRLChecked: true,
-    clientSendChecked: true,
-    dataChecked: true,
-    status: 1
+    project: 'tienda',
+    rate: '1000 euros',
+    date: '10 mayo',
+    id: 'tiendajuan',
+    code: '',
+    description: '',
+    task: '',
+    ambassador: '',
+    sendChecked: false,
+    dataChecked: false,
+    steps: {
+      headfirst: true,
+      operations: false,
+      talent: false,
+      ambassador: false,
+      headend: false,
+    }
   },
   {
-    developer: 'María Domínguez',
-    rate: 1000,
+    developer: 'emilia',
+    emailDev: 'juan@gmaill',
     client: 'zara',
-    location: 'Calle leganitos',
-    job: 'maquetadora',
-    projectNumber: 5557,
-    code: 2222,
-    ambassador: 'luisa rodriguez',
-    sendChecked: true,
-    PRLChecked: true,
-    clientSendChecked: true,
-    dataChecked: true,
-    status: 2
+    project: 'tienda',
+    rate: '1000 euros',
+    date: '10 mayo',
+    id: 'tiendaemilia',
+    code: '3456aa34',
+    description: 'un proyecto muy bonito',
+    task: '5',
+    ambassador: '',
+    sendChecked: false,
+    dataChecked: false,
+    steps: {
+      headfirst: true,
+      operations: true,
+      talent: false,
+      ambassador: false,
+      headend: false,
+    }
   },
   {
-    developer: 'David Domínguez',
-    rate: 1000,
+    developer: 'claudia',
+    emailDev: 'juan@gmaill',
     client: 'zara',
-    location: 'Calle leganitos',
-    job: 'maquetadora',
-    projectNumber: 5585,
-    code: 3333,
-    ambassador: 'luisa rodriguez',
-    sendChecked: true,
-    PRLChecked: true,
-    clientSendChecked: true,
-    dataChecked: true,
-    status: 3
+    project: 'tienda',
+    rate: '1000 euros',
+    date: '10 mayo',
+    id: 'tiendaclaudia',
+    code: '3456aa34',
+    description: 'un proyecto muy bonito',
+    task: '5',
+    ambassador: 'maria emilia',
+    sendChecked: false,
+    dataChecked: false,
+    steps: {
+      headfirst: true,
+      operations: true,
+      talent: true,
+      ambassador: false,
+      headend: false,
+    }
   },
   {
-    developer: 'Alejandra Domínguez',
-    rate: 1000,
+    developer: 'pepe',
+    emailDev: 'pepe@gmaill',
     client: 'zara',
-    location: 'Calle leganitos',
-    job: 'maquetadora',
-    projectNumber: 7555,
-    code: 44444,
-    ambassador: 'luisa rodriguez',
+    project: 'tienda',
+    rate: '1000 euros',
+    date: '10 mayo',
+    id: 'tiendapepe',
+    code: '3456aa34',
+    description: 'un proyecto muy bonito',
+    task: '5',
+    ambassador: 'maria emilia',
     sendChecked: true,
-    PRLChecked: true,
-    clientSendChecked: true,
-    dataChecked: true,
-    status: 4
+    dataChecked: false,
+    steps: {
+      headfirst: true,
+      operations: true,
+      talent: true,
+      ambassador: true,
+      headend: false,
+    }
   },
   {
-    developer: 'Pedro Domínguez',
-    rate: 1000,
+    developer: 'paco',
+    emailDev: 'juan@gmaill',
     client: 'zara',
-    location: 'Calle leganitos',
-    job: 'maquetadora',
-    projectNumber: 5955,
-    code: 55555,
-    ambassador: 'luisa rodriguez',
+    project: 'tienda',
+    rate: '1000 euros',
+    date: '10 mayo',
+    id: 'tiendapaco',
+    code: '3456aa34',
+    description: 'un proyecto muy bonito',
+    task: '5',
+    ambassador: 'maria emilia',
     sendChecked: true,
-    PRLChecked: true,
-    clientSendChecked: true,
     dataChecked: true,
-    status: 5
-  },
+    steps: {
+      headfirst: true,
+      operations: true,
+      talent: true,
+      ambassador: true,
+      headend: true,
+    }
+  }  
 ]
 
-export { users, devAsignation };
+export { devAsignation };
